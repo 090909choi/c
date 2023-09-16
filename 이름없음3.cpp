@@ -1,10 +1,11 @@
+//#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 int main()
 {
-	int grade = 6;
-	int class = 3;
-	int number= 22;
+	int num;
 	
-	printf("%d학년%d반%d번",grade,class,number);
+	printf("숫자를 하나 입력해주세요. : ");
+	scanf("%d", &num);
+//	printf("%d\n",num);
 	return 0;
 }

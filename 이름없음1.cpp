@@ -1,11 +1,8 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	printf("나의 이름은 %s 입니다.\n", "홍길동");
-	printf("나는 %d살 입니다.\n", 20);
-	printf("나의 혈액형은 %c입니다.\n", 'A');
-	printf("나의 시력은 %.1f/%.2f입니다.\n", 2.0,2.0);
-	printf("나의 생일은 %d월%d일입니다. \n", 9,9);
+	printf("12378m는 %.3fkm입니다\n",12.378);
+	printf("34.536kg은 %dg입니다\n",34536);
+	printf("34.5%는 %d할 %d푼%d리 입니다.\n",3,4,5);
 	return 0; 
-	 
 }
