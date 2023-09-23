@@ -2,15 +2,15 @@
 
 int main()
 {
-	int grade;
-	int siu;
-	int number;
+	int a;
 	
-//	printf("학년,반,번호를 입력해주세요. : ");
-//	scanf("%d %d %d", &grade , &siu,&number);
-//	printf("%d학년 %d반 %d번",grade,siu,number);
-printf("아파트 동,호수를 입력해주세요. : ");
-scanf("%d %d", &grade,&siu);
-printf("%d동 %d호",grade,siu);
+	printf("두 자리 자연수를 입력하시오. :");
+	scanf("%d",&a);
+	int b=a%10;
+
+	int c=(a-b)/10;
+
+	printf("%d",c+b);
 	return 0;
+	 
 }

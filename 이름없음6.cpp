@@ -2,13 +2,12 @@
 
 int main()
 {
-	float key;
-	
-//	printf("키를 입력하세요. : ");
-//	scanf("%f",&key);
-//	printf("%fcm",key);
-printf("마라톤의 풀코스의 길이를 입력해주세요. :");
-scanf("%f",&key);
-printf("%fkm",key);
+	int a;
+
+	scanf("%d",&a);
+	int b=a%10;
+	int c=((a%100)-b)/10;
+	int d=(a-b-c)/100;
+	printf("%d",b+c+d);
 	return 0;
 }

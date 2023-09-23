@@ -1,11 +1,9 @@
-//#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+
 int main()
 {
-	int num;
-	
-	printf("숫자를 하나 입력해주세요. : ");
-	scanf("%d", &num);
-//	printf("%d\n",num);
+	printf("%d\n",10/3);
+	printf("%d\n",10/3.0);
+	printf("%f\n",10/3.0);
 	return 0;
 }
