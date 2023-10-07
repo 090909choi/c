@@ -1,9 +1,30 @@
 #include<stdio.h>
-
 int main()
 {
-	printf("%d\n",10/3);
-	printf("%d\n",10/3.0);
-	printf("%f\n",10/3.0);
+	int res;
+	
+	res = 0 && 0;
+	printf("%d\n",res);
+		res = 0 && 1;
+	printf("%d\n",res);
+		res = 1 && 0;
+	printf("%d\n",res);
+		res = 1 && 1;
+	printf("%d\n",res);
+	
+	
+		res = 0 || 0;
+	printf("%d\n",res);
+		res = 0 || 1;
+	printf("%d\n",res);
+		res = 1 || 0;
+	printf("%d\n",res);
+		res = 1 || 1;
+	printf("%d\n",res);
+	
+	printf("%d\n",!res);
 	return 0;
 }
+	
+	
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
