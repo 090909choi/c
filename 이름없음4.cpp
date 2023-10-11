@@ -1,8 +1,7 @@
 #include<stdio.h>
+
 int main()
 {
-	int a;
-	scanf("%d",&a);
-	printf("%d",a/7==5);
+	printf("%d",80-3*20>=15);
 	return 0;
 }
