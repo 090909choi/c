@@ -2,6 +2,20 @@
 
 int main()
 {
-	printf("%d",1000%1-1000%3==0);
+	int a, b;
+	
+	a= 20;
+	b=5;
+	
+	a+=b;
+	printf("a = %d\n",a);
+	a*=b;
+	printf("a = %d\n",a);
+	a-=b;
+	printf("a = %d\n",a);
+	a/=b;
+	printf("a = %d\n",a);
+	a%=b;
+	printf("a = %d\n",a);
 	return 0;
 }

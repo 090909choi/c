@@ -2,6 +2,12 @@
 
 int main()
 {
-	printf("%d",170<176&&95>67);
+	int a;
+	
+	a=45;
+	a += 3;
+	a -= 10;
+	a -=2;
+	printf("%d",a);
 	return 0;
 }

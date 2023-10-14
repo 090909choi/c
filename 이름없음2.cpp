@@ -2,6 +2,13 @@
 
 int main()
 {
-	printf("%d",5000-500*5-1000*2>=0);
+	int a = 10;
+	
+	a++;
+	a++;
+	printf("a=%d\n", a);
+	++a;
+	++a;
+	printf("a = %d\n", a);
 	return 0;
 }

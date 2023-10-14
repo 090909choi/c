@@ -2,6 +2,18 @@
 
 int main()
 {
-	printf("%d",1827-888*2<972-888);
+	int a, b;
+	
+	a = 10;
+	b = a++;
+	printf("a = %d b = %d\n", a, b);
+	b = ++a;
+	printf("a %d b = %d\n", a, b);
+	
+	a = 20;
+	b = a--;
+	printf("a = %d b = %d\n", a, b);
+	b = --a;
+	printf("a %d b = %d\n", a, b);
 	return 0;
 }
