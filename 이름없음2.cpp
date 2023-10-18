@@ -2,13 +2,18 @@
 
 int main()
 {
-	int a = 10;
+	int n=0;
 	
-	a++;
-	a++;
-	printf("a=%d\n", a);
-	++a;
-	++a;
-	printf("a = %d\n", a);
+	printf("%d\n",n);
+	printf("%d\n",n += 3);
+	printf("%d\n", n *= 0);
+	printf("%d\n", n += 5);
+	printf("%d\n", n++);
+	printf("%d\n",++n);
+	printf("%d\n",n %=5); // n % 5
+
+	printf("%d\n", --n);
+	printf("%d\n", n--);
+	printf("%d\n",n);
 	return 0;
 }
