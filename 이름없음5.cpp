@@ -2,18 +2,14 @@
 
 int main()
 {
-	int a, b;
+	int a=50;
 	
-	a = 10;
-	b = a++;
-	printf("a = %d b = %d\n", a, b);
-	b = ++a;
-	printf("a %d b = %d\n", a, b);
-	
-	a = 20;
-	b = a--;
-	printf("a = %d b = %d\n", a, b);
-	b = --a;
-	printf("a %d b = %d\n", a, b);
+	a*=10;
+	a+=10;
+	a*=10;
+	a-=5;
+	a-=5;
+	a/=2;
+	printf("%d",a);
 	return 0;
 }

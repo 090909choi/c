@@ -2,23 +2,16 @@
 
 int main()
 {
-	int a = 10;
-	int b = 2;
+	float a=100;
 	
-
-	a-=b;
-	printf("a = %d\n", a);
-	a*=2;
-	printf("a = %d\n", a);
-	a=--a;
-	printf("a = %d\n", a);
-	a%=7;
-	printf("a = %d\n", a);
-	a*=3;
-	printf("a = %d\n", a);
-	a=++a;
-	printf("a = %d\n", a);
+	a+=10;
+	a+=10;
+	a+=10;
 	a/=2;
-	printf("a = %d\n", a);
+	a/=2;
+	a-=5;
+	a-=5;
+	printf("%.1f",a);
 	return 0;
- }                                                                                                              
+	
+}
