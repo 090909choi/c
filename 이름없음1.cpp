@@ -1,17 +1,39 @@
 #include<stdio.h>
 
-int main()
+int  main()
 {
-	int a,b,c,d;
-	float e,f;
+	int a,b,c,d,e,f;
+	a=2;
+	b=5;
+	c=7;
+	d=9;
+	e=12;
 	
-	printf("몸무게와 키를 입력해주세요. :");
-	scanf("%d,%d",&a,&b);
-	c=a+10;
-	d=b-5;
-	f=d/100;
-	e=c/f;
-	printf("몸무게:%d,키:%d,체질량 지수:%f ",c,d,e);
+	scanf("%d",&f);
+	
+	if(f!=a && f!=b && f!=c && f!=d && f!=e)
+	{
+		printf("입력오류");
+	}
+	else if(f==a)
+	{
+		printf("스포츠카");
+	}
+	else if(f==b)
+	{
+		printf("승용차");
+	}
+	else if(f==c)
+	{
+		printf("SUV");
+	}
+	else if(f==d)
+	{
+		printf("승합차");
+	}	
+	else if(f==e)
+	{
+		printf("미니버스");
+	}
 	return 0;
-	
-}
+	}

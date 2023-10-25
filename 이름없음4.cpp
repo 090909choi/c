@@ -1,17 +1,18 @@
 #include<stdio.h>
 
-int main()
+int  main()
 {
-	float a=100;
+	int a;
 	
-	a+=10;
-	a+=10;
-	a+=10;
-	a/=2;
-	a/=2;
-	a-=5;
-	a-=5;
-	printf("%.1f",a);
-	return 0;
+	scanf("%d",&a);
 	
+	if(a==2||a==3||a==6)
+	{
+		printf("공약수  맞음.");
+	}
+	else
+	{
+		printf("공약수 아님.");
+	}
+	return 0; 
 }

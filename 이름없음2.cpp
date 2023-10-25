@@ -1,19 +1,18 @@
 #include<stdio.h>
 
-int main()
+int  main()
 {
-	int n=0;
+	int a;
 	
-	printf("%d\n",n);
-	printf("%d\n",n += 3);
-	printf("%d\n", n *= 0);
-	printf("%d\n", n += 5);
-	printf("%d\n", n++);
-	printf("%d\n",++n);
-	printf("%d\n",n %=5); // n % 5
-
-	printf("%d\n", --n);
-	printf("%d\n", n--);
-	printf("%d\n",n);
-	return 0;
+	scanf("%d",&a);
+	
+	if(a%2==0||a%3==0)
+	{
+		printf("배수 맞음.");
+	}
+	else
+	{
+		printf("배수 아님.");
+	}
+	return 0; 
 }

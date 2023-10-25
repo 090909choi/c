@@ -1,15 +1,19 @@
 #include<stdio.h>
 
-int main()
+int  main()
 {
-	int a=50;
-	
-	a*=10;
-	a+=10;
-	a*=10;
-	a-=5;
-	a-=5;
-	a/=2;
-	printf("%d",a);
+	float a;
+	int b,c;
+	scanf("%f",&a);
+	b=a*10;
+	c=(int)a;
+	if(b%10>=5)
+	{
+		printf("%d",c+1);
+	}
+	else
+	{
+		printf("%d",c);
+	}
 	return 0;
 }

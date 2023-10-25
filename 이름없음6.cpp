@@ -1,17 +1,35 @@
 #include<stdio.h>
 
-int main()
+int  main()
 {
-	float a,b,c,d,e,f,g,h;
+	float a,b,c;
 	
-	a=100;
-	b=a+10;
-	c=b+10;
-	d=c+10;
-	e=d/2;
-	f=e/2;
-	g=f-5;
-	h=g-5;
-	printf("%.1f",h);
-	return 0;
+	scanf("%f,%f,%f",&a,&b,&c);
+	
+	if(a<b<c)
+	{
+		printf("%f,%f,%f",a,b,c);
+	}
+		if(b<c<a)
+	{
+		printf("%f,%f,%f",b,c,a);
+	}
+		if(c<a<b)
+	{
+		printf("%f,%f,%f",c,a,b);
+	}
+		if(b<a<c)
+	{
+		printf("%f,%f,%f",b,a,c);
+	}
+		if(c<b<a)
+	{
+		printf("%f,%f,%f",c,b,a);
+	}
+		if(a<c<b)
+	{
+		printf("%f,%f,%f",a,c,b);
+	}
+	return 0; 
 }
+	

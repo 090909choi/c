@@ -1,24 +1,29 @@
 #include<stdio.h>
 
-int main()
+int  main()
 {
-	int a = 12;
-	int b = 3;
+	int a,b;
 	
-	a -= b;
-	++b;
-	printf("a = %d b = %d\n", a, b);
-	--b;
-	a /= b;	// a = 3 , b = 3
-	printf("a = %d b = %d\n", a, b);
-	a += b;
-	++b;
-	printf("a = %d b = %d\n", a, b);
-	++b;
-	a -= b;
-	printf("a = %d b = %d\n", a, b);
-	--b;
-	a += b;
-	printf("a = %d b = %d\n", a, b);
+	scanf("%d,%d",&a,&b);
+	
+	if(a%2==0 && b%2==0)
+	{
+		printf("%d",a*b);
+	}
+	else if(a%2!=0 && b%2!=0)
+	{
+		printf("%d",a+b);
+	}
+	else
+	{
+		if(a>b)
+		{
+			printf("%d",a-b);
+		}
+		if(b>a)
+		{
+			printf("%d",b-a);
+		}
+	}
 	return 0;
 }
