@@ -1,18 +1,12 @@
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	int a;
+	int n;
 	
-	scanf("%d",&a);
-	
-	if(a==2||a==3||a==6)
+	for (n = 100;n >= 0; n-=10)
 	{
-		printf("공약수  맞음.");
+		printf("%d",n);
 	}
-	else
-	{
-		printf("공약수 아님.");
-	}
-	return 0; 
+	return 0;
 }

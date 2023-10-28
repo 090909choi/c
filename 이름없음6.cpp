@@ -1,35 +1,13 @@
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	float a,b,c;
+	int i,n;
 	
-	scanf("%f,%f,%f",&a,&b,&c);
-	
-	if(a<b<c)
+	for (i =0; i < 10; i++)
 	{
-		printf("%f,%f,%f",a,b,c);
-	}
-		if(b<c<a)
-	{
-		printf("%f,%f,%f",b,c,a);
-	}
-		if(c<a<b)
-	{
-		printf("%f,%f,%f",c,a,b);
-	}
-		if(b<a<c)
-	{
-		printf("%f,%f,%f",b,a,c);
-	}
-		if(c<b<a)
-	{
-		printf("%f,%f,%f",c,b,a);
-	}
-		if(a<c<b)
-	{
-		printf("%f,%f,%f",a,c,b);
+		printf("%d",(i+1)*n);
+		n*=-1;
 	}
 	return 0; 
 }
-	

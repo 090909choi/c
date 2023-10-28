@@ -1,34 +1,27 @@
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int n;
+//	
+//	for (n = -10; n <= -1; n++)
+//	{
+//		printf("%d",n);
+//	}
+//	printf("마지막 n = %d\n",n);
+//	return 0; 
+//}
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	int a,b,c;
+	int n;
 	
-	scanf("%d,%d,%d",&a,&b,&c);
-	
-	if(a<b && a<c)
+	for (n = 30; n > 20; n--)
 	{
-		printf("첫 번째 정수가 제일 작음,");
+		printf("%d",n);
 	}
-	if(b<a && b<c)
-	{
-		printf("두 번째 정수가 제일 작음,");
-	}
-	if(c<b && c<a)
-	{
-		printf("세 번째 정수가 제일 작음,");
-	}
-	if(a>b && a>c)
-	{
-		printf("첫 번째 정수가 제일 큼 ");
-	}
-	if(b>a && b>c)
-	{
-		printf("두 번째 정수가 제일 큼 ");
-	}
-	if(c>b && c>a)
-	{
-		printf("세 번째 정수가 제일 큼 ");
-	}
+	printf("마지막 n = %d\n",n);
 	return 0; 
 }
+

@@ -1,19 +1,12 @@
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	float a;
-	int b,c;
-	scanf("%f",&a);
-	b=a*10;
-	c=(int)a;
-	if(b%10>=5)
+	int i,n;
+	
+	for (i =0; i < 10; i++)
 	{
-		printf("%d",c+1);
+		printf("%d",(i+1)%2);
 	}
-	else
-	{
-		printf("%d",c);
-	}
-	return 0;
+	return 0; 
 }

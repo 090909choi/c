@@ -1,18 +1,13 @@
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	int a;
+	int i;
 	
-	scanf("%d",&a);
-	
-	if(a%2==0||a%3==0)
+	for (i =1; i <= 100000; i++)
 	{
-		printf("배수 맞음.");
-	}
-	else
-	{
-		printf("배수 아님.");
+		printf("씨큐브코딩");
 	}
 	return 0; 
 }
+
