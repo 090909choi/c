@@ -2,11 +2,11 @@
 
 int main()
 {
-	int i,n;
+	int a;
 	
-	for (i =0; i < 10; i++)
+	scanf("%d",&a);
+	for(int i=9; i>=2; i--)
 	{
-		printf("%d",(i+1)%2);
+		printf("%d X %d = %d\n",a,i,a*i);
 	}
-	return 0; 
 }

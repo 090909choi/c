@@ -2,12 +2,13 @@
 
 int main()
 {
-	int i,n;
+	int n,a,b;
 	
-	for (i =0; i < 10; i++)
+	scanf("%d",&n);
+	for(int i=3; i<=n; i+=3)
 	{
-		printf("%d",(i+1)*n);
-		n*=-1;
+		printf("%d\n",i);
 	}
-	return 0; 
+	return 0;
 }
+

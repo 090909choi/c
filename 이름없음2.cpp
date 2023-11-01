@@ -2,12 +2,13 @@
 
 int main()
 {
-	int i;
+	int n,sum;
+	scanf("%d",&n);
 	
-	for (i =1; i <= 100000; i++)
+	for(int i=1; i<=n; i++)
 	{
-		printf("¾¾Å¥ºêÄÚµù");
+		sum = sum + i;
 	}
-	return 0; 
+	printf("%d ",sum);
+	return 0;
 }
-

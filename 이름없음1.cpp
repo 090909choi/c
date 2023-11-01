@@ -1,14 +1,25 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 
 int main()
 {
-	int res;
+	int n,a,c;
+	scanf("%d",&c);
 	
-	srand(time(NULL));
-	printf("%d\n",rand());
-	res = rand();
-	printf("%d" ,res);
+	
+	for(int i=1; i<=c; i++)
+	{
+		
+	scanf("%d %d", &n,&a);
+	
+		if(n>a)
+		{
+			printf("yes");
+		}
+		else
+		{
+			printf("no");
+		}
+	
+	}
 	return 0;
 }
