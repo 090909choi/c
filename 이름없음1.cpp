@@ -2,24 +2,18 @@
 
 int main()
 {
-	int n,a,c;
-	scanf("%d",&c);
+	int n;
 	
-	
-	for(int i=1; i<=c; i++)
+	for(int i=1;i<=10;i++)
 	{
-		
-	scanf("%d %d", &n,&a);
-	
-		if(n>a)
-		{
-			printf("yes");
-		}
-		else
-		{
-			printf("no");
-		}
-	
+	if(i%2==0)
+	{
+		printf("%d ",i*-1);
+	}
+	else
+	{
+		printf("%d ",i);
+	}
 	}
 	return 0;
 }

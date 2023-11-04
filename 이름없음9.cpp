@@ -1,29 +1,15 @@
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	int a,b;
+	int i;
 	
-	scanf("%d,%d",&a,&b);
+	i = 11;
+	do
+	{
+		printf("%d ",i);
+		i++;
+	}while( i <= 10);
 	
-	if(a%2==0 && b%2==0)
-	{
-		printf("%d",a*b);
-	}
-	else if(a%2!=0 && b%2!=0)
-	{
-		printf("%d",a+b);
-	}
-	else
-	{
-		if(a>b)
-		{
-			printf("%d",a-b);
-		}
-		if(b>a)
-		{
-			printf("%d",b-a);
-		}
-	}
 	return 0;
 }

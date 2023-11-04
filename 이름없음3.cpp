@@ -2,12 +2,21 @@
 
 int main()
 {
-	int n;
-	scanf("%d",&n);
+	int n,sum;
 	
-	for(int i=n; i>=1; i--)
+	for(int i=1;i<=1000;i++)
 	{
-		printf("%d\n",i);
+		if(i%3==0)
+		{
+			printf("%d ",i*-1);
+			sum=sum+(i*-1);
+		}
+		else
+		{
+			printf("%d ",i);
+			sum=sum+(i);
+		}
 	}
+	printf("%d",sum);
 	return 0;
 }

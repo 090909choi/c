@@ -2,13 +2,14 @@
 
 int main()
 {
-	int n,a,b;
+	int n;
 	
-	scanf("%d",&n);
-	for(int i=3; i<=n; i+=3)
+	n = -8;
+	while (n<=1)
 	{
-		printf("%d\n",i);
+		printf("%d",n);
+		n++;
+		
 	}
 	return 0;
 }
-

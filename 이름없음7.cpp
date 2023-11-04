@@ -3,15 +3,17 @@
 int main()
 {
 	int n,sum,c;
-	c=0;
-	scanf("%d",&n);
-	for(int i=6; i<=n; i+=6)
+	
+	n = 10;
+	sum = 0;
+	while(n <= 17)
 	{
-		printf("%d\n",i);
+		printf("%d ", n);
+		sum=sum+n;
 		c=c+1;
-		sum=sum+i;
+		n++;
 	}
-	printf("6의 배수의 개수:%d\n",c);
-	printf("합:%d\n",sum);
+	printf("%d ",sum);
+	printf("%d",c);
 	return 0;
 }

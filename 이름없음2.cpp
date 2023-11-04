@@ -2,13 +2,24 @@
 
 int main()
 {
-	int n,sum;
-	scanf("%d",&n);
+	int n,a,b;
 	
-	for(int i=1; i<=n; i++)
+	scanf("%d",&n);
+	scanf("%d,%d",&a,&b);
+	if(n%a==0)
 	{
-		sum = sum + i;
+		if(n%b==0)
+		{
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
 	}
-	printf("%d ",sum);
+	else
+	{
+		printf("0");
+	}
 	return 0;
 }

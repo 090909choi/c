@@ -2,29 +2,29 @@
 
 int main()
 {
-	int a,b,c,d;
-	
-	scanf("%d",&d);
-	
-	for(int i=1; i<=d; i++){
-	
-		scanf("%d,%d,%d",&a,&b,&c);
-		if(a>=b+c || b>=c+a || c>=a+b)
+	int sum,min,input;
+	sum=0;
+	min=100;
+	for(int i=1;i<=4;i++)
+	{
+		scanf("%d",&input);
+		if(input%2!=0)
 		{
-			printf("Invalid");
+			sum=sum+input;
+			if(input<min)
+			{
+				min=input;
+			}
 		}
-		else if(a==b && a==c && b==c)
-		{
-			printf("Equilateral");
-		}
-		else if(a==b && a==c)
-		{
-			printf("Isosceles");
-		}
-		else if(a!=b && a!=c && b!=c)
-		{
-			printf("Scalene");
-		}
+	}
+	if(sum==0)
+	{
+		printf("-1");
+	}
+	else
+	{
+		printf("%d\n",sum);
+		printf("%d",min)
 	}
 	return 0;
 }
