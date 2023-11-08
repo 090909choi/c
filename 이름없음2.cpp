@@ -2,24 +2,22 @@
 
 int main()
 {
-	int n,a,b;
-	
-	scanf("%d",&n);
-	scanf("%d,%d",&a,&b);
-	if(n%a==0)
+	int i = 1;
+	int a,n;
+	n=1;
+	scanf("%d",&a);
+	while(i<=a)
 	{
-		if(n%b==0)
+		printf("%d ",n);
+		if(n%2==0)
 		{
-			printf("1");
+			n=n+1;
 		}
 		else
 		{
-			printf("0");
+			n=n-1;
 		}
-	}
-	else
-	{
-		printf("0");
+		i++;
 	}
 	return 0;
 }

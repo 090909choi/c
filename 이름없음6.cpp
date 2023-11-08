@@ -2,14 +2,24 @@
 
 int main()
 {
-	int n;
+	int i = 1;
+	int n,a,b;
+	b=1;
+	n=10;
+	scanf("%d",&a);
 	
-	n = -8;
-	while (n<=1)
+	while(1)
 	{
-		printf("%d",n);
-		n++;
-		
+		if(a<n)
+		{
+			printf("%d는 %d자리 수입니다.",a,b);
+			break;
+		}
+		else
+		{
+			n=n*10;
+			b=b+1;
+		}
 	}
 	return 0;
 }

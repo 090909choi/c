@@ -2,18 +2,17 @@
 
 int main()
 {
-	int n,sum,c;
-	
-	n = 10;
+	int n,m;
+	int sum;
+	scanf("%d",&n);
+	m = n;
 	sum = 0;
-	while(n <= 17)
+	while(n>0)
 	{
-		printf("%d ", n);
-		sum=sum+n;
-		c=c+1;
-		n++;
+		printf("%d",n%10);
+		sum = sum + n%10;
+		n/=10;
 	}
-	printf("%d ",sum);
-	printf("%d",c);
+	printf("\гу:%d",sum);
 	return 0;
 }

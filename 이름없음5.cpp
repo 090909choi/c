@@ -1,15 +1,20 @@
 #include<stdio.h>
 
 int main()
-{
-	int i;
-	
-	i = 1;
-	while (i <= 10)
+{ 	
+	int a = 1;
+	int n,m;
+	scanf("%d,%d",&n,&m);
+	while(a<=m)
 	{
-		printf("%d ",i);
-		i++;
+		int i = 1;
+		while(i<=n)
+		{
+			printf("%d ",i);
+			i++;
+		}
+		printf("\n");
+		a++;
 	}
-	
 	return 0;
 }

@@ -2,18 +2,16 @@
 
 int main()
 {
-	int n;
+	int i = 1;
+	int a,n;
+	n=1;
+	scanf("%d",&a);
+	while(i<=a)
+	{
+		printf("%d ",n);
+		i++;
+		n=n*-1;
+	}
 	
-	for(int i=1;i<=10;i++)
-	{
-	if(i%2==0)
-	{
-		printf("%d ",i*-1);
-	}
-	else
-	{
-		printf("%d ",i);
-	}
-	}
 	return 0;
 }

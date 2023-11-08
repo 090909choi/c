@@ -2,21 +2,21 @@
 
 int main()
 {
-	int n,sum;
-	
-	for(int i=1;i<=1000;i++)
+	int i = 1;
+	int a;
+	scanf("%d",&a);
+	while(i<=a)
 	{
-		if(i%3==0)
+		if(i%2==0)
 		{
 			printf("%d ",i*-1);
-			sum=sum+(i*-1);
 		}
 		else
 		{
 			printf("%d ",i);
-			sum=sum+(i);
 		}
+		i++;
 	}
-	printf("%d",sum);
+	
 	return 0;
 }

@@ -1,30 +1,17 @@
 #include<stdio.h>
 
 int main()
-{
-	int sum,min,input;
-	sum=0;
-	min=100;
-	for(int i=1;i<=4;i++)
+{ 	
+	int n;
+	scanf("%d",&n);
+	while(1)
 	{
-		scanf("%d",&input);
-		if(input%2!=0)
+		int i = 1;
+		while(i<=n)
 		{
-			sum=sum+input;
-			if(input<min)
-			{
-				min=input;
-			}
+			printf("%d ",i);
+			i++;
 		}
-	}
-	if(sum==0)
-	{
-		printf("-1");
-	}
-	else
-	{
-		printf("%d\n",sum);
-		printf("%d",min)
 	}
 	return 0;
 }
