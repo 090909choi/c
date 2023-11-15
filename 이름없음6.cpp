@@ -2,24 +2,21 @@
 
 int main()
 {
-	int i = 1;
-	int n,a,b;
-	b=1;
-	n=10;
-	scanf("%d",&a);
+	int n,g;
+	g = 1;
 	
+	scanf("%d",&n);
 	while(1)
 	{
-		if(a<n)
+		if(n%g==0)
 		{
-			printf("%d는 %d자리 수입니다.",a,b);
-			break;
+			printf("%d ",n/g);
+			if(n<g)
+			{
+				break;
+			}
 		}
-		else
-		{
-			n=n*10;
-			b=b+1;
-		}
+		g=g+1;
 	}
 	return 0;
 }

@@ -1,17 +1,27 @@
 #include<stdio.h>
 
 int main()
-{ 	
-	int n;
-	scanf("%d",&n);
-	while(1)
+{
+	int a,b,c,d,e;
+	
+	scanf("%d,%d,%d,%d",&a,&b,&c,&d);
+	e=(a+b+c+d)/4;
+	e=e/10;
+	switch(e)
 	{
-		int i = 1;
-		while(i<=n)
-		{
-			printf("%d ",i);
-			i++;
-		}
+		case 9:
+			printf("참 잘했어요.");
+			break;
+		case 8:
+			printf("잘했어요.");
+			break;
+		case 7:
+			printf("화이팅.");
+			break;
+		default:
+			printf("힘내요,할 수 있어요.");
+			break;
 	}
-	return 0;
+	return 0; 
 }
+	

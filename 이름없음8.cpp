@@ -2,20 +2,22 @@
 
 int main()
 {
-	int n,a;
-	int sum;
+	int n,g,sum,h;
+	g = 1;
+	sum=0;
+	h=0;
+	
 	scanf("%d",&n);
-	sum = n;
-	a=0;
-	printf("%d을 뒤집은 정수는 :",n);
-	while(n>0)
+	while(n>=g)
 	{
-		printf("%d",n%10);
-		a=a*10+n%10;
-		n/=10;
+		if(n%g==0)
+		{
+			printf("%d ",n/g);
+			sum = sum + 1 ;
+			h = h + n/g;
+		}
+		g=g+1;
 	}
-	printf("\n");
-	sum=sum+a;
-	printf("\합:%d",sum);
+	printf("약수의 개수:%d\n약수의 합:%d\n",sum,h);
 	return 0;
 }

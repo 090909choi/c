@@ -2,17 +2,18 @@
 
 int main()
 {
-	int n,m;
-	int sum;
-	scanf("%d",&n);
-	m = n;
-	sum = 0;
-	while(n>0)
+	int a,b;
+	int i = 1;
+	b=0;
+	while(i<=10)
 	{
-		printf("%d",n%10);
-		sum = sum + n%10;
-		n/=10;
+		scanf("%d",&a);
+		if(b<a)
+		{
+			b=a;
+		}
+		i++;
 	}
-	printf("\합:%d",sum);
+	printf("가장 큰 수:%d",b);
 	return 0;
 }

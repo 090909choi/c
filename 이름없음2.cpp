@@ -2,22 +2,38 @@
 
 int main()
 {
-	int i = 1;
-	int a,n;
-	n=1;
+	int a;
+	
 	scanf("%d",&a);
-	while(i<=a)
+	switch(a)
 	{
-		printf("%d ",n);
-		if(n%2==0)
-		{
-			n=n+1;
-		}
-		else
-		{
-			n=n-1;
-		}
-		i++;
+		case 1:
+			printf("È¦¼ö ");
+			break;
+		case 3:
+			printf("È¦¼ö ");
+			break;
+		case 2:
+			printf("Â¦¼ö ");
+			break;
+		case 7:
+			printf("È¦¼ö ");
+			break;
+		case 9:
+			printf("È¦¼ö ");
+			break;
+		case 4:
+			printf("Â¦¼ö ");
+			break;
+		case 6:
+			printf("Â¦¼ö ");
+			break;
+		case 8:
+			printf("Â¦¼ö ");
+			break;
+		default:
+			printf("ÀÚ¿¬¼ö ");
+			break;
 	}
-	return 0;
+	return 0; 
 }

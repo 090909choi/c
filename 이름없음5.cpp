@@ -1,20 +1,8 @@
 #include<stdio.h>
 
 int main()
-{ 	
-	int a = 1;
-	int n,m;
-	scanf("%d,%d",&n,&m);
-	while(a<=m)
-	{
-		int i = 1;
-		while(i<=n)
-		{
-			printf("%d ",i);
-			i++;
-		}
-		printf("\n");
-		a++;
-	}
-	return 0;
+{
+	printf("Â¦¼öÀÇ ÇÕ:30");
+	printf("È¦¼öÀÇ ÇÕ:25");
+	return 0; 
 }
