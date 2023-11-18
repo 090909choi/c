@@ -2,21 +2,22 @@
 
 int main()
 {
-	int n,g;
-	g = 1;
+	int i = 7;
+	int z = 1;
+//	int a = 6;
 	
-	scanf("%d",&n);
-	while(1)
+	do
 	{
-		if(n%g==0)
+		i=7;
+		printf("\n");
+		printf("%d«–≥‚ ",z);
+		do
 		{
-			printf("%d ",n/g);
-			if(n<g)
-			{
-				break;
-			}
-		}
-		g=g+1;
-	}
+			printf("%dπ› ",i);
+			i--;
+		}while(i>=1);
+		z++;
+//		a=a-1;
+	}while(z<=6);
 	return 0;
 }

@@ -2,22 +2,16 @@
 
 int main()
 {
-	int n,g,sum,h;
-	g = 1;
-	sum=0;
-	h=0;
-	
-	scanf("%d",&n);
-	while(n>=g)
+	int n=1;
+	for(int i=5;i>=1;i--)
 	{
-		if(n%g==0)
+		printf("\n");
+		for(int z=i;z>=1;z--)
 		{
-			printf("%d ",n/g);
-			sum = sum + 1 ;
-			h = h + n/g;
+			printf("%2d",z);
 		}
-		g=g+1;
+		n++;
+		
 	}
-	printf("약수의 개수:%d\n약수의 합:%d\n",sum,h);
 	return 0;
 }

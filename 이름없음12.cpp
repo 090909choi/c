@@ -2,12 +2,17 @@
 
 int main()
 {
-	int a;
-	int b;
-	int c; 
-	
-	printf("창의성,공익성,협동성의 점수를 입력하세요. :");
-	scanf("%d,%d,%d",&a,&b,&c);
-	printf("%d",a>=80 && b>=80 && c>=80);
+	int sum = 0;
+	for(int i=10;i>=1;i--)
+	{
+		printf("\n");
+		for(int z=i;z>=1;z--)
+		{
+			printf("%d",z);
+			sum=sum+z;
+		}
+		printf(" 계산 : %d",sum);
+	}
+	printf("\n%d",sum);
 	return 0;
 }

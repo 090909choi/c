@@ -2,14 +2,15 @@
 
 int main()
 {
-	int i;
-	
-	i = 11;
-	do
+	for(int i=5;i>=1;i--)
 	{
-		printf("%d ",i);
-		i++;
-	}while( i <= 10);
-	
+		printf("\n");
+		for(int z=1;z<=i;z++)
+		{
+			printf("%2d",z);
+		}
+		
+		
+	}
 	return 0;
 }

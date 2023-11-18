@@ -2,26 +2,23 @@
 
 int main()
 {
-	int a,b,c,d,e;
+	int i = 1;
+	int z = 6;
+//	int a = 6;
 	
-	scanf("%d,%d,%d,%d",&a,&b,&c,&d);
-	e=(a+b+c+d)/4;
-	e=e/10;
-	switch(e)
+	while(z>=1)
 	{
-		case 9:
-			printf("참 잘했어요.");
-			break;
-		case 8:
-			printf("잘했어요.");
-			break;
-		case 7:
-			printf("화이팅.");
-			break;
-		default:
-			printf("힘내요,할 수 있어요.");
-			break;
-	}
-	return 0; 
+		i=1;
+		printf("\n");
+		printf("%d학년 ",z);
+		while(i<=7)
+		{
+			printf("%d반 ",i);
+			
+			i++;
+		}
+		z--;
+//		a=a-1;
+	}	
+	return 0;
 }
-	

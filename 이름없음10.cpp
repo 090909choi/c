@@ -2,11 +2,13 @@
 
 int main()
 {
-	int a;
-	int b;
-	
-	printf("한글과 영어 타자 속도를 입력해주세요. :");
-	scanf("%d,%d",&a,&b);
-	printf("%d",a>=180 && b>=150);
+	for(int i=5;i>=1;i--)
+	{
+		printf("\n");
+		for(int z=i;z<=5;z++)
+		{
+			printf("%2d",z);
+		}
+	}
 	return 0;
 }

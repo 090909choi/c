@@ -2,18 +2,16 @@
 
 int main()
 {
-	int a,b;
-	int i = 1;
-	b=0;
-	while(i<=10)
+	int n=1;
+	for(int i=1;i<=5;i++)
 	{
-		scanf("%d",&a);
-		if(b<a)
+		printf("\n");
+		for(int z=1;z<=n;z++)
 		{
-			b=a;
+			printf("%2d",z);
 		}
-		i++;
+		n++;
+		
 	}
-	printf("가장 큰 수:%d",b);
 	return 0;
 }

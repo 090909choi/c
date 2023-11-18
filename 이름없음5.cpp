@@ -2,7 +2,23 @@
 
 int main()
 {
-	printf("짝수의 합:30");
-	printf("홀수의 합:25");
-	return 0; 
+	int i = 1;
+	int z = 1;
+//	int a = 6;
+	
+	do
+	{
+		i=1;
+		printf("\n");
+		printf("%d학년 ",z);
+		do
+		{
+			printf("%d반 ",i);
+			
+			i++;
+		}while(i<=7);
+		z++;
+//		a=a-1;
+	}while(z>=6);
+	return 0;
 }
