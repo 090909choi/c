@@ -1,19 +1,23 @@
 #include<stdio.h>
 
 int main()
-{
-	int i = 1;
-	int z = 1;
-	
-	while(z<=6)
+{	
+	int dd;
+	for(int i = 100; i <= 999; i++)
 	{
-		while(i<=7)
+		dd=1;
+		
+		for(int z = 2; z<i; z++)
 		{
-			printf("%d¹Ý ",i);
-			
-			i++;
+			if(i%z==0)
+			{
+				dd=0;
+				break;
+			}
+		}	
+		if(dd){
+			printf("%d ",i);
 		}
-		z++;
-	}	
+	}
 	return 0;
 }

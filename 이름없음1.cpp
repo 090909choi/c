@@ -2,20 +2,22 @@
 
 int main()
 {
-	int n,b;
+	int n,a;
 	n=1;
-	b=1;
-	for(int z = 1;z<=6; z++)
+	a=1;
+	for(int i = 1;i<=100;i++)
 	{
-		n=1;
-		printf("\n");
-		printf("%dÇĞ³â ",b);
-		for(int i = 1; i<=7;i++)
+		
+		printf("\n%d :",i);
+		
+		for(int z=1;z<=i;z++)
 		{
-		 	printf("%d¹İ ",n);
-		 	n=n+1;
+			if(i%z==0)
+			{
+				printf("%3d",z);
+			}
 		}
-		b=b+1;
+		n++;
 	}
 	return 0;
 }
