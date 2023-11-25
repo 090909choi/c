@@ -1,23 +1,7 @@
 #include<stdio.h>
 
-int main()
+int main(int argc, char* argvs[])
 {
-	int n,a;
-	n=1;
-	a=1;
-	for(int i = 1;i<=100;i++)
-	{
-		
-		printf("\n%d :",i);
-		
-		for(int z=1;z<=i;z++)
-		{
-			if(i%z==0)
-			{
-				printf("%3d",z);
-			}
-		}
-		n++;
-	}
-	return 0;
+	printf("¾È³ç! ¾¾Å¥ºêÄÚµù ");
+	return 0; 
 }

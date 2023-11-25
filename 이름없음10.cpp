@@ -1,14 +1,23 @@
 #include<stdio.h>
 
-int main()
+int Divisor(int n)
 {
-	for(int i=5;i>=1;i--)
+	int sum;
+	sum = 0;
+	for(int i = 1; i<=n; i++)
 	{
-		printf("\n");
-		for(int z=i;z<=5;z++)
+		if(n%i==0)
 		{
-			printf("%2d",z);
+			sum = sum + i;
 		}
 	}
+	printf("%d",sum);
 	return 0;
+}
+
+int main()
+{
+	
+	int re = Divisor(4
+);
 }

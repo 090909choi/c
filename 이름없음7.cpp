@@ -1,17 +1,31 @@
 #include<stdio.h>
 
+int ShowSum(int a,int b)
+{
+	int sum1,sum2;
+	scanf("%d,%d",&a,&b);
+	if(a<b)
+	{
+		for(int i = a; i<=b; i++)
+		{
+			sum1 = sum1 + i;
+		}
+		return sum1;
+	}
+	else
+	{
+		for(int i = b; i<=a; i++)
+		{
+			sum2 = sum2 + i;
+		}
+		return sum2;
+	}
+}
+
 int main()
 {
-	int n=1;
-	for(int i=1;i<=5;i++)
-	{
-		printf("\n");
-		for(int z=1;z<=n;z++)
-		{
-			printf("%2d",z);
-		}
-		n++;
-		
-	}
-	return 0;
+	int o;
+	o = ShowSum(10,10);
+	printf("%d",o);
 }
+

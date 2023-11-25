@@ -1,24 +1,21 @@
 #include<stdio.h>
 
+int Sum(int n)
+{
+	int sum;
+	sum=0;
+	scanf("%d",&n);
+	
+	for(int i=1; i<=n; i++)
+	{
+		sum=sum+i;
+	}
+	return sum;
+}
+
 int main()
 {
-	int i = 1;
-	int z = 1;
-//	int a = 6;
-	
-	do
-	{
-		i=1;
-		printf("\n");
-		printf("%dÇĞ³â ",z);
-		do
-		{
-			printf("%d¹İ ",i);
-			
-			i++;
-		}while(i<=7);
-		z++;
-//		a=a-1;
-	}while(z>=6);
-	return 0;
+	int re;
+	re = Sum(10);
+	printf("re = %d\n",re);
 }

@@ -1,23 +1,31 @@
+//#include<stdio.h>
+//
+//int plus()
+//{
+//	int a = 3;
+//	int b = 2;
+//	
+//	printf("%d",a + b);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	plus();
+//}
 #include<stdio.h>
 
-int main()
-{	
-	int dd;
-	for(int i = 100; i <= 999; i++)
-	{
-		dd=1;
-		
-		for(int z = 2; z<i; z++)
-		{
-			if(i%z==0)
-			{
-				dd=0;
-				break;
-			}
-		}	
-		if(dd){
-			printf("%d ",i);
-		}
-	}
+int plus(int num1, int num2)
+{
+	printf("%d\n",num1 + num2);
 	return 0;
+}
+
+int main()
+{
+	int a = 3;
+	int b = 2;
+	
+	plus(a,b);
+	plus(5,3);
 }

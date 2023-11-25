@@ -1,18 +1,20 @@
 #include<stdio.h>
 
+int plus(int num1,int num2)
+{
+	return num1+num2;
+}
+
 int main()
 {
-	for(int i = 5; i>=1;i--)
-	{
-		printf("\n");
-		for(int j = 1; j<=i; j++){
-			printf(" ");
-		}
-		
-		for(int z = 6-i; z>=1;z--)
-		{
-			printf("%d",z);
-		}
-		
-	}
+	int a = 3;
+	int b = 2;
+	int num1 = plus(a,b);
+	printf("%d\n",num1);
+	
+	num1 = plus(3,5);
+	printf("%d\n",num1);
+	
+	num1 = plus(3,5);
+	printf("%d\n",num1 + 10);
 }

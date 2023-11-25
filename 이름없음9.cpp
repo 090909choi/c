@@ -1,16 +1,20 @@
 #include<stdio.h>
 
-int main()
+int Divisor(int n)
 {
-	for(int i=5;i>=1;i--)
+	int sum;
+	for(int i = 1; i<n; i++)
 	{
-		printf("\n");
-		for(int z=1;z<=i;z++)
+		if(n%i==0)
 		{
-			printf("%2d",z);
+			printf("%d ",i);
 		}
-		
-		
 	}
 	return 0;
+}
+
+int main()
+{
+	
+	int re = Divisor(60);
 }
