@@ -1,16 +1,20 @@
 #include<stdio.h>
 
-int power(int n)
+int ReverseNum(int n)
 {
-	int x;
-	scanf("%d",&x);
-	x=x*x;
-	
-	return x;
+	int a;
+	for(int i = 1; i<=n; i++)
+	{
+		for(int z = 1; z<=i;z++)
+		{
+			a=a+z;
+		}
+	}
+	printf("%d",a);
 }
 
 int main()
 {
-	int re = power(10);
-	printf("%d",re);
+	
+	int re = ReverseNum(3);
 }

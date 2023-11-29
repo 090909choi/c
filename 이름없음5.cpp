@@ -1,21 +1,26 @@
 #include<stdio.h>
 
-int Sum(int n)
+int ReverseNum(int n)
 {
-	int sum;
-	sum=0;
-	scanf("%d",&n);
-	
-	for(int i=1; i<=n; i++)
-	{
-		sum=sum+i;
-	}
-	return sum;
+	int sum1;
+	sum1=n/1000;
+	printf("%d ",sum1);
+	int sum2;
+	sum2=n/100;
+	int sum6= sum2;
+	printf("%d ",sum2-sum1*10);
+	int sum3;
+	sum3=n/10;
+	int sum5 = sum3;
+	printf("%d ",sum3-(sum6)*10);
+	int sum4;
+	sum4=n/1;
+	printf("%d ",sum4-sum5*10);
+	return 0;
 }
 
 int main()
 {
-	int re;
-	re = Sum(10);
-	printf("re = %d\n",re);
+	
+	int re = ReverseNum(1234);
 }

@@ -1,18 +1,19 @@
 #include<stdio.h>
 
-int plus()
+int IsMultipleNumber(int a,int b)
 {
-	int a = 3;
-	int b = 2;
-	
-	return a+b;
+	if(b%a==0)
+	{
+		printf("¹è¼öÀÓ "); 
+	}
+	else
+	{
+		printf("¾Æ´Ô ");
+	}
+	return 0;
 }
 
 int main()
 {
-	int num = plus();
-	
-	printf("%d\n",num);
-	printf("%d\n",plus());
-	printf("%d\n",plus()+10);
+	int re = IsMultipleNumber(12,24);
 }

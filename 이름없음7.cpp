@@ -1,31 +1,17 @@
 #include<stdio.h>
 
-int ShowSum(int a,int b)
+int ReverseNum(int n)
 {
-	int sum1,sum2;
-	scanf("%d,%d",&a,&b);
-	if(a<b)
+	int a;
+	for(int i = 1;i<=n;i++)
 	{
-		for(int i = a; i<=b; i++)
-		{
-			sum1 = sum1 + i;
-		}
-		return sum1;
+		a+=i*i;
 	}
-	else
-	{
-		for(int i = b; i<=a; i++)
-		{
-			sum2 = sum2 + i;
-		}
-		return sum2;
-	}
+	printf("%d",a);
 }
 
 int main()
 {
-	int o;
-	o = ShowSum(10,10);
-	printf("%d",o);
+	
+	int re = ReverseNum(3);
 }
-
