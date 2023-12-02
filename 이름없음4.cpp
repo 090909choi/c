@@ -1,20 +1,12 @@
 #include<stdio.h>
 
-int plus(int num1,int num2)
-{
-	return num1+num2;
-}
-
 int main()
 {
-	int a = 3;
-	int b = 2;
-	int num1 = plus(a,b);
-	printf("%d\n",num1);
+	char c; int i; long l; float f; double d;
 	
-	num1 = plus(3,5);
-	printf("%d\n",num1);
-	
-	num1 = plus(3,5);
-	printf("%d\n",num1 + 10);
+	printf("%d %d %d %d %d\n",sizeof(c),sizeof(i),sizeof(l),sizeof(f),sizeof(d));
+	printf("%d %d %d\n",sizeof(char),sizeof(int),sizeof(long));
+	printf("%d %d\n",sizeof(float),sizeof(double));
+	printf("%d %d\n",sizeof(153),sizeof(5.2));
+	return 0;
 }

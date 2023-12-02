@@ -1,19 +1,15 @@
 #include<stdio.h>
 
-int IsMultipleNumber(int a,int b)
-{
-	if(b%a==0)
-	{
-		printf("¹è¼öÀÓ "); 
-	}
-	else
-	{
-		printf("¾Æ´Ô ");
-	}
-	return 0;
-}
-
 int main()
 {
-	int re = IsMultipleNumber(12,24);
+	int num[]= {5,2,6,7,8,9,4,3,1};
+	int page[10] = {123,57,67,86};
+	int i,j;
+	for(int i = 0;i<=8;i++){
+		printf("%d  ",num[i]);
+	}
+	for(int i = 0;i<=9;i++){
+		printf("%d  ",page[i]);
+	}
+	return 0;
 }

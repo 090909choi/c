@@ -1,20 +1,21 @@
 #include<stdio.h>
-
-int ReverseNum(int n)
-{
-	int a;
-	for(int i = 1; i<=n; i++)
-	{
-		for(int z = 1; z<=i;z++)
-		{
-			a=a+z;
-		}
-	}
-	printf("%d",a);
-}
-
+#include<stdlib.h>
+#include<time.h>
 int main()
 {
+	int res;
+	int sum; 
 	
-	int re = ReverseNum(3);
+	srand(time(NULL));
+	
+	int arr[10];
+	
+	for(int i = 0;i<=9;i++){
+		arr[i]=rand()%9+1;
+		
+		printf("%d  ",arr[i]);
+		sum += arr[i];
+	}
+	printf("\nÇÕ°è : %d",sum);
+	return 0;
 }
