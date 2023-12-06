@@ -1,27 +1,29 @@
 #include<stdio.h>
 
-int ReverseNum(int n)
+int  main()
 {
-	int sum,sum1;
-	for(int i = 1000; i<=n; i++)
+	int a,b;
+	
+	scanf("%d,%d",&a,&b);
+	
+	if(a%2==0 && b%2==0)
 	{
-		int a,b;
-		a=i/1000;
-		b=i%10;
-		if(a!=b ||(i%100-b)/10!=i/100-a*10)
+		printf("%d",a*b);
+	}
+	else if(a%2!=0 && b%2!=0)
+	{
+		printf("%d",a+b);
+	}
+	else
+	{
+		if(a>b)
 		{
-				printf("대칭아닌 수 %d\n",i);
-				sum=sum+i;
-				sum1=sum1+1;
+			printf("%d",a-b);
+		}
+		if(b>a)
+		{
+			printf("%d",b-a);
 		}
 	}
-	printf("%d합 ",sum);
-	printf("%d개수 ",sum1);
-	return n; 
-}
-
-int main()
-{
-	
-	int re = ReverseNum(1112);
+	return 0;
 }

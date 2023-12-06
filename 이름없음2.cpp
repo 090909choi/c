@@ -2,11 +2,14 @@
 
 int main()
 {
-	int ar[10] = {10,20,30,40,50,60,70,80,90,100};
-	int br[10];
-	for(int i = 0; i<=9; i++){
-		br[i]=ar[i];
-		printf("%d   %d\n",ar[i],br[i]);
+	int num;
+	scanf ("%d",&num);
+	if(num%2==0&&num%3==0)
+	{
+		printf("2와 3의 공배수 입니다."); 
 	}
-	return 0;
+	else
+	{
+		printf("2와 3의 공배수가 아닙니다.");
+	}
 }

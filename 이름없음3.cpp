@@ -2,14 +2,14 @@
 
 int main()
 {
-	int num[]= {5,2,6,7,8,9,4,3,1};
-	int page[10] = {123,57,67,86};
-	int i,j;
-	for(int i = 0;i<=8;i++){
-		printf("%d  ",num[i]);
+	int num;
+	scanf("%d",&num);
+	if(12%num==0&&30%num==0)
+	{
+		printf("12와 30의 공약수입니다.");
 	}
-	for(int i = 0;i<=9;i++){
-		printf("%d  ",page[i]);
-	}
-	return 0;
-}
+	else
+	{
+		printf("12와 30의 공약수가 아닙니다.");
+	 } 
+} 

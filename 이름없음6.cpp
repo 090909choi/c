@@ -1,21 +1,44 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+
 int main()
 {
-	int res;
-	int sum; 
-	
-	srand(time(NULL));
-	
-	int arr[10];
-	
-	for(int i = 0;i<=9;i++){
-		arr[i]=rand()%9+1;
-		
-		printf("%d  ",arr[i]);
-		sum += arr[i];
+	int num1;
+	int num2;
+	int num3;
+	scanf("%d %d %d",&num1,&num2,&num3);
+	if(num1<num2&&num1<num3)
+	{
+		if(num2<num3)
+		{
+			printf("%d %d %d",num1,num2,num3);
+		}
+		else
+		{
+			printf("%d %d %d",num1,num3,num2);
+		}
 	}
-	printf("\nÇÕ°è : %d",sum);
-	return 0;
+	else if(num2<num1&&num2<num3)
+	{
+		if(num1<num3)
+		{
+			printf("%d %d %d",num2,num1,num3);
+		}
+		else
+		{
+			printf("%d %d %d",num2,num3,num1);
+		}
+		
+	}
+	else if(num3<num2&&num3<num1)
+	{
+		if(num1<num2)
+		{
+			printf("%d %d %d",num3,num1,num2);
+		}
+		else
+		{
+			printf("%d %d %d",num3,num2,num1);
+		}
+		
+	}
 }
