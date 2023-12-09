@@ -2,14 +2,12 @@
 
 int main()
 {
-	int num;
-	scanf("%d",&num);
-	if(12%num==0&&30%num==0)
-	{
-		printf("12와 30의 공약수입니다.");
-	}
-	else
-	{
-		printf("12와 30의 공약수가 아닙니다.");
-	 } 
-} 
+	char ch;
+	
+	printf("문자를 입력하세요 :");
+	ch = getchar();
+	putchar(ch);
+	printf("\n");
+	printf("%c %d\n",ch,ch);
+	return 0;
+}

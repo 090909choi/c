@@ -1,23 +1,14 @@
 #include<stdio.h>
 
-int Divisor(int n)
-{
-	int sum;
-	sum = 0;
-	for(int i = 1; i<=n; i++)
-	{
-		if(n%i==0)
-		{
-			sum = sum + i;
-		}
-	}
-	printf("%d",sum);
-	return 0;
-}
-
 int main()
 {
+	char sentence[80];
 	
-	int re = Divisor(4
-);
+	puts("단어를  입력하세요 :");
+	gets(sentence);
+	for(int i = 0; i<=sentence[i];i++){
+		sentence[i] = sentence[i]-32;
+	}
+	puts(sentence);
+	return 0;
 }

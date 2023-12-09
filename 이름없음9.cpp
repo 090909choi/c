@@ -1,29 +1,20 @@
 #include<stdio.h>
 
-int  main()
+int main()
 {
-	int a,b;
+	char ch1;
 	
-	scanf("%d,%d",&a,&b);
-	
-	if(a%2==0 && b%2==0)
+	int i = 65;
+	while(i<=90)
 	{
-		printf("%d",a*b);
+		printf("%c ",i);
+		i++;
 	}
-	else if(a%2!=0 && b%2!=0)
+	printf("\n");
+	int z = 97;
+	while(z<=122)
 	{
-		printf("%d",a+b);
+		printf("%c ",z);
+		z++;
 	}
-	else
-	{
-		if(a>b)
-		{
-			printf("%d",a-b);
-		}
-		if(b>a)
-		{
-			printf("%d",b-a);
-		}
-	}
-	return 0;
 }

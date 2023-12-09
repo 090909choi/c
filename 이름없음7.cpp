@@ -2,8 +2,10 @@
 
 int main()
 {
-	float num;
-	scanf("%lf",&num);
-	printf("%lf",num);
+	char sentence[80];
 	
+	puts("문장을 입력하세요 :");
+	gets(sentence);
+	puts(sentence);
+	return 0;
 }
