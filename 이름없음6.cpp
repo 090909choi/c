@@ -2,10 +2,15 @@
 
 int main()
 {
-	char word[20];
+	int a; double b; char c;
+	int* pa; double* pb; char* pc;
 	
-	printf("단어를 입력하세요 :");
-	scanf("%s",&word);
-	printf("입력하신 단어는 %s 입니다.",word);
+	a = 153; b = 12.7; c = 'J';
+	pa = &a; pb = &b; pc = &c;
+	printf("pa = %x pb = %x pc = %x\n",pa,pb,pc);
+	printf("&a = %p &b = %p &c = %p\n",&a,&b,&c);
+	
+	printf("a = %d b = %lf c = %c\n",a,b,c);
+	printf("*pa = %d *pb = %lf *pc = %c\n",*pa,*pb,*pc);
 	return 0;
 }

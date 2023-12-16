@@ -2,10 +2,12 @@
 
 int main()
 {
-	char str1[15] = {'H','i',' ','C','3',' ','C','o','d','i','n','g'};
-	char str2[15] = {'H','i',' ','C','3',' ','C','o','d','i','n','g','\0'};
+	char ch = 'A';
 	
-	printf("%s\n", str1);
-	printf("%s\n",str2);
-	return 0;
+	char* pch;
+	pch = &ch;
+	
+	printf("%p\n",pch);
+	
+	printf("%c\n",*pch);
 }

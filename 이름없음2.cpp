@@ -2,10 +2,13 @@
 
 int main()
 {
-	char ch;
+	int a;
+	double b;
+	char c;
 	
-	printf("문자를 입력하세요 :");
-	scanf("%c",&ch);
-	printf("%c %d\n",ch,ch);
+	a = 153; b = 12.7; c = 'J';
+	printf("변수 a의 주소 : %x\n",a);
+	printf("변수 b의 주소 : %x\n",b);
+	printf("변수 c의 주소 : %x\n",c);
 	return 0;
 }

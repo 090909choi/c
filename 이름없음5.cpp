@@ -1,18 +1,18 @@
 #include<stdio.h>
 
+int add(int* num1,int* num2)
+{
+	*num1 = *num1 + 10;
+	*num2 = *num2 + 10;
+}
 int main()
 {
-	char str1[25] = "C language is powerful";
-	char str2[] = "Coding is computer programming";
+	int number1 = 5;
+	int number2 = 10;
 	
-	for(int i = 0; i<=25; i++)
-	{
-		printf("%c",str1[i]);
-	}
-	int z = 0;
-	while(str2[z]){
-		printf("%c",str2[z]);
-		z++;
-	}
+	add(&number1,&number2);
+	
+	printf("number1 = %d\n",number1);
+	printf("number2 = %d\n",number2);
 	return 0;
 }

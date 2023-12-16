@@ -1,15 +1,17 @@
 #include<stdio.h>
+#include<string.h>
 
 int main()
 {
-	char ch1, ch2;
+	char word[15];
+	gets(word);
+	int len;
 	
-	ch1 = 'A';
-	ch2 = 'a';
-	printf("%c %c\n", ch1, ch2);
-	printf("%d %d\n",ch1,ch2);
-	
-	printf("%c %c\n", 66, 98);
-	printf("%d %d\n",66,98);
+	len = strlen(word);
+	for(int i = len;i>=0;i--)
+	{
+		printf("%c",word[i]);
+	}
 	return 0;
 }
+

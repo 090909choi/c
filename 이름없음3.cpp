@@ -2,12 +2,12 @@
 
 int main()
 {
-	char ch;
+	int x;
+	x = 10;
 	
-	printf("문자를 입력하세요 :");
-	ch = getchar();
-	putchar(ch);
-	printf("\n");
-	printf("%c %d\n",ch,ch);
+	int* p;
+	p = &x;
+	
+	printf(" %d ",*p);
 	return 0;
 }
