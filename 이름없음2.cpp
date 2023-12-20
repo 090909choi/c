@@ -1,14 +1,19 @@
 #include<stdio.h>
+#include<string.h>
 
 int main()
-{
-	int a;
-	double b;
-	char c;
-	
-	a = 153; b = 12.7; c = 'J';
-	printf("변수 a의 주소 : %x\n",a);
-	printf("변수 b의 주소 : %x\n",b);
-	printf("변수 c의 주소 : %x\n",c);
+{	
+	int count,len;
+	char a[80];
+	gets(a);
+	len = strlen(a);
+	count=0;
+	for(int i = 0;i<=len;i++){
+		count++;
+		if(a[i]==' '){
+			count--;
+		}
+	}
+	printf("%d",count-1);
 	return 0;
 }

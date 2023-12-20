@@ -2,16 +2,15 @@
 #include<string.h>
 
 int main()
-{
-	char word[15];
-	gets(word);
-	int len;
-	
-	len = strlen(word);
-	for(int i = len;i>=0;i--)
-	{
-		printf("%c",word[i]);
+{	
+	int count,length;
+	char a[];
+	gets(a);
+	length = strlen(word);
+	for(int i = 0;i<=length;i++){
+	count+=1;
 	}
+	printf("%d",count+1);
 	return 0;
 }
 
