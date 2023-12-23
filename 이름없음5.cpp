@@ -1,18 +1,32 @@
 #include<stdio.h>
 
-int add(int* num1,int* num2)
-{
-	*num1 = *num1 + 10;
-	*num2 = *num2 + 10;
-}
 int main()
 {
-	int number1 = 5;
-	int number2 = 10;
-	
-	add(&number1,&number2);
-	
-	printf("number1 = %d\n",number1);
-	printf("number2 = %d\n",number2);
+	int i,j,sum;
+
+	int ar[6][9] = {{0,0,0,1,0,0,0,0,0},
+					{0,0,0,0,0,0,0,2,0},
+					{0,0,0,0,1,0,0,0,0},
+					{0,2,0,1,0,0,1,0,0},
+					{0,0,0,1,0,0,0,0,0},
+					{0,0,1,0,0,0,1,0,0}};
+	for(i = 0;i<6;i++){
+		for(j = 0;j<9;j++){
+			if(ar[i][j] == 0)
+			{
+				ar[i][j] = 1;
+			}
+			else
+			{
+				ar[i][j] = 0;
+			}
+		}
+	}
+	for(i = 0;i<6;i++){
+		for(j = 0;j<9;j++){
+				printf("%d",ar[i][j]);
+		}
+		printf("\n");
+	}
 	return 0;
 }

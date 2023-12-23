@@ -1,16 +1,10 @@
 #include<stdio.h>
-#include<string.h>
 
 int main()
-{	
-	int count,length;
-	char a[];
-	gets(a);
-	length = strlen(word);
-	for(int i = 0;i<=length;i++){
-	count+=1;
-	}
-	printf("%d",count+1);
+{
+	int arr0[4][5];
+	int arr1[7][5];
+	float arr2[4][5];
+	char arr3[9][12];
 	return 0;
 }
-
