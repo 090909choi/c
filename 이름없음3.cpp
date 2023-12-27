@@ -1,30 +1,49 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 
 int main()
 {
-	int i,j,sum;
-	int ar[6][9] = {{0,0,0,1,0,0,0,0,0},
-					{0,0,0,0,0,0,0,2,0},
-					{0,0,0,0,1,0,0,0,0},
-					{0,2,0,1,0,0,1,0,0},
-					{0,0,0,1,0,0,0,0,0},
-					{0,0,1,0,0,0,1,0,0}};
-//	sum = 0;	
-	for(i = 0;i<6;i++){
-		for(j = 0;j<9;j++){
-			if(ar[i][j] == 2)
-			{
-//				sum+=1;
-//				printf("%d행 %d열 ",i,j);
-				ar[i-1][j] = 5;
-				ar[i][j-1] = 5;
-				ar[i][j+1] = 5;
-				ar[i+1][j] = 5;	
-			}
-			printf("%d",ar[i][j]);
+	int ar[6][6] = {0};
+	int i,j,a;
+	srand(time(NULL));
+	
+	for(i = 0; i<6; i++)
+	{
+		for(j=0;j<6;j++)
+		{
+			ar[i][j] = rand()%99+1;
+		}
+	}
+	scanf("%d",&a);
+
+	i = 0;
+	while(i<6)
+	{
+		j = 0;
+		while(j<6)
+		{
+			printf("%d  ",ar[i][j]);
+			j++;
 		}
 		printf("\n");
+		i++;
 	}
-//	printf("%d개 ",sum);
+	i = 0;
+	while(i<6)
+	{
+		j = 0;
+		while(j<6)
+		{
+			if(ar[i][j] == a)
+			{
+				printf("행:%d 열:%d",i,j);
+			}
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+
 	return 0;
 }

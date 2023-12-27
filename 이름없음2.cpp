@@ -1,29 +1,50 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 
 int main()
 {
-	int ar1[3][4] = {0};
-	int ar2[ ][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
-	int ar3[3][4] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
-	int i,j;
+	int ar[6][6] = {0};
+	int i,j,a;
+	srand(time(NULL));
 	
-//	for(i = 0;i<3;i++){
-//		for(j = 0; j<4;j++){
-////			printf("%d ",ar1[i][j]);
-//			printf("%d ",ar2[i][j]);
-//		}
-//			printf("\n");
-//	}
+	for(i = 0; i<6; i++)
+	{
+		for(j=0;j<6;j++)
+		{
+			ar[i][j] = rand()%99+1;
+		}
+	}
+	scanf("%d",&a);
+
 	i = 0;
-	while(i<3){
-		j=0;
-		while(j<4){
-			printf("%d ",ar3[i][j]);
+	while(i<6)
+	{
+		j = 0;
+		while(j<6)
+		{
+			printf("%d  ",ar[i][j]);
 			j++;
 		}
 		printf("\n");
 		i++;
 	}
-	
+	i = 0;
+	while(i<6)
+	{
+		j = 0;
+		while(j<6)
+		{
+			if(ar[i][j] == a)
+			{
+				printf("있다 ");
+				break; 
+			}
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	printf("없다 ");
 	return 0;
 }
