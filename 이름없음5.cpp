@@ -1,36 +1,16 @@
-#include<stdio.h> 
+#include<stdio.h>
 
 int main()
 {
-	int h,z,i,j;
-	h=19;
-	z=2;
-	int ar[5][5] = {0};
-	for(i = 0;i<=4;i++){
-		for(j=0;j<=i;j++){
-			if(i==j)
-			{
-				ar[i][j] = 0;
-			}
-			else
-			{
-				ar[i][j] = h;
-				h-=2;
-			}
-		}
-		printf("\n");
-	}
-	for(i = 0;i<4;i++){
-		for(j=i+1;j<=4;j++){
-				ar[i][j] = z;
-				z+=2;
-		}
-	}
-	for(i = 0;i<=4;i++){
-		for(j = 0;j<=4;j++){
-			printf("%3d ",ar[i][j]);
-		}
-		printf("\n");
-	}
+	int ar[3] = {1,2,3};
+	int ar2[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+	
+	printf("%d\n",ar);
+	printf("%d\n",&ar[0]);
+	
+	printf("%d\n",ar2);
+	printf("%d\n",&ar2[0][0]);
+	
+	printf("%d\n",&ar2[1][0]);
 	return 0;
 }

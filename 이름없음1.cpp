@@ -1,37 +1,19 @@
 #include<stdio.h>
-#include<string.h>
 
 int main()
 {
-	char arr[80]={0};
-	int a;
-	scanf("%s",&arr);
-	a = strlen(arr);
-	for(int i=0;i<a;i++){
-//		if(arr[i] <= 90 && arr[i]>=65)
-//		{
-//			printf("%c",arr[i]);
-//		}
-//		else
-//		{
-//			if(arr[i] >= 97 && arr[i] <= 122)
-//			{
-//				printf("%c",arr[i]);
-//			}
-//		}
-//		if(arr[i] <= 57 && arr[i] >= 48)
-//		{
-//			printf("%c",arr[i]);
-//		}
-		if(arr[i] <= 90 && arr[i]>=65)
-		{
-			printf("%c",arr[i]+32);
-		}
-		if(arr[i] >= 97 && arr[i] <= 122)
-		{
-			printf("%c",arr[i]-32);
-		}
-		}
+	int ar[10] {10,20,30,40,50,60,70,80,90,100};
+	int br[7];
 	
-	return 0;
+	printf("배열의 이름 : %d\n",ar[0]);
+	printf("배열의 이름 : %d\n",ar+0);
+	printf("배열의 이름 : %d\n",&ar[0]);
+	printf("배열의 이름 : %d\n",*(ar+0));
+	
+	printf("배열의 이름 : %d\n",ar[1]);
+	printf("배열의 이름 : %d\n",ar+1);
+	printf("배열의 이름 : %d\n",&ar[1]);
+	printf("배열의 이름 : %d\n",*(ar+1));
+	
+	return 0;                  
 }

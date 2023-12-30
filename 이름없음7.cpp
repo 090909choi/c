@@ -1,49 +1,61 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 
 int main()
 {
-	int ar[6][6] = {0};
-	int i,j,a,b;
-	srand(time(NULL));
-	scanf("%d",&a);
-	b=0;
+	int ar[5][5];
+	int i,j,a;
+	a=1;
 	
-	for(i = 0; i<6; i++)
-	{
-		for(j=0;j<6;j++)
-		{
-			ar[i][j] = rand()%99+1;
-		}
+	for(i = 0;i<5;i++){
+		ar[0][i] = a;
+		a++;
 	}
-	
-	i = 0;
-	while(i<6)
-	{
-		j = 0;
-		while(j<6)
-		{
+	a--;
+	for(i = 0;i<5;i++){
+		ar[i][4] = a;
+		a++;
+	}
+	a--;
+	for(i = 4;i>=0;i--){
+		ar[4][i] = a;
+		a++;
+	}
+	a--;
+	for(i = 4;i>=1;i--){
+		ar[i][0] = a;
+		a++;
+	}
+	a--;
+	for(i = 0;i<4;i++){
+		ar[1][i] = a;
+		a++;
+	}
+	a--;
+	for(i = 1;i<4;i++){
+		ar[i][3] = a;
+		a++;
+	}
+	a--;
+	for(i = 3;i>=1;i--){
+		ar[3][i] = a;
+		a++;
+	}
+	a--;
+	for(i = 3;i>=2;i--){
+		ar[i][1] = a;
+		a++;
+	}
+	a--;
+	for(i = 1;i<3;i++){
+		ar[2][i] = a;
+		a++;
+	}
+	a--;
+	for(i = 0; i <5;i++){
+		for(j = 0; j < 5;j++){
 			printf("%3d",ar[i][j]);
-			
-			if(ar[i][j] == a)
-			{
-				b+=1;
-			
-			}
-			j++;
 		}
 		printf("\n");
-		i++;
-	}
-	printf("%d",b); 
-	if(b>=1)
-	{
-		printf("있음 ");
-	}
-	else
-	{
-		printf("없음 ");
 	}
 	return 0;
 }

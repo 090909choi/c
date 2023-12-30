@@ -1,50 +1,16 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 
 int main()
 {
-	int ar[6][6] = {0};
-	int i,j,a;
-	srand(time(NULL));
+	int ar[10] = {10,20,30,40,50,60,70,80,90,100};
+	int i;
 	
-	for(i = 0; i<6; i++)
-	{
-		for(j=0;j<6;j++)
-		{
-			ar[i][j] = rand()%99+1;
-		}
-	}
-	scanf("%d",&a);
-
-	i = 0;
-	while(i<6)
-	{
-		j = 0;
-		while(j<6)
-		{
-			printf("%d  ",ar[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-	i = 0;
-	while(i<6)
-	{
-		j = 0;
-		while(j<6)
-		{
-			if(ar[i][j] == a)
-			{
-				printf("있다 ");
-				break; 
-			}
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-	printf("없다 ");
+	*(ar+0) = 34;
+	*(ar+1) = 21;
+	
+	printf("%d %d\n",ar[0],*(ar+0));
+	printf("%d %d\n",ar[1],*(ar+1));
+	printf("%d %d\n",*(ar+2),*(ar+3));
+	
 	return 0;
 }

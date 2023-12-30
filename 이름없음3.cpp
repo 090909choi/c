@@ -1,49 +1,18 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 
 int main()
 {
-	int ar[6][6] = {0};
-	int i,j,a;
-	srand(time(NULL));
+	int ar[] = {11,21,31,41,51,61,71};
+	int* p;
+	int* q;
+	int* r;
+	int i;
 	
-	for(i = 0; i<6; i++)
+	p = ar;
+	
+	for(i = 0; i <(sizeof(ar)/sizeof(ar[0])); i++);
 	{
-		for(j=0;j<6;j++)
-		{
-			ar[i][j] = rand()%99+1;
-		}
+		printf("%d ",*(ar+i));
 	}
-	scanf("%d",&a);
-
-	i = 0;
-	while(i<6)
-	{
-		j = 0;
-		while(j<6)
-		{
-			printf("%d  ",ar[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-	i = 0;
-	while(i<6)
-	{
-		j = 0;
-		while(j<6)
-		{
-			if(ar[i][j] == a)
-			{
-				printf("За:%d ї­:%d",i,j);
-			}
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-
 	return 0;
 }
