@@ -2,15 +2,15 @@
 
 int main()
 {
-	int ar[10] = {10,20,30,40,50,60,70,80,90,100};
-	int i;
+	char str[] = "Hello String";
+	char name[20] = "씨큐브코딩";
+	char *p,*q;
 	
-	*(ar+0) = 34;
-	*(ar+1) = 21;
+	p = str;
+	q = name;
 	
-	printf("%d %d\n",ar[0],*(ar+0));
-	printf("%d %d\n",ar[1],*(ar+1));
-	printf("%d %d\n",*(ar+2),*(ar+3));
+	printf("%d %d\n",str,name);
+	printf("%s %s\n",str,name);
 	
 	return 0;
 }
