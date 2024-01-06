@@ -1,33 +1,31 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 
-int InputData(int ar[]);
-int PrintArray(int ar[]);
-int GetMax(int *ar);
-int GetMin(int *ar);
+struct Circle{
+	int x;
+	int y;
+	double r;
+};
 
 int main()
 {
-	int ar[10] = {0};
-	int max,min;
+	struct Circle c1,c3,c4;
+	struct Circle c2 = {-2,-6,3.1415};
 	
-	InputData(ar);
-	max = GetMax(ar);
-	min = GetMin(ar);
+	c1.x = 5;
+	c1.y = 10;
+	c1.r = 8;
+	
+	c3 = c1;
+	
+	c4.x = c2.y;
+	c4.y = c2.x;
+	
+	printf(" c1의 좌표 (%d,%d) c1의 반지름%lf",c1.x,c1.y,c1.r);
+	printf(" c2의 좌표 (%d,%d) c2의 반지름%lf",c2.x,c2.y,c2.r);
+	printf(" c3의 좌표 (%d,%d) c3의 반지름%lf",c3.x,c3.y,c3.r);
+	printf(" c4의 좌표 (%d,%d) c4의 반지름%lf",c4.x,c4.y,c4.r);
 	
 	return 0;
 }
-int InputData(int ar[])
-{
-	for(int i = 0;i<10;i++){
-		ar[i] = rand()%100+1;
-	}
-}
-int PrintArray(int ar[])
-{
-	for(int i = 0;i<10;i++){
-		printf("%d ",ar[i]);
-	}
-}
+
 

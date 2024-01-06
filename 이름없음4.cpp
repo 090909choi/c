@@ -1,60 +1,27 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include<string.h>
 
-int InputData(int *p);
-int PrintArray(int ar[]);
-int GetMax(int *ar);
-int GetMin(int *ar);
+struct Person{
+	char name[10];
+	int age;
+	double height;
+};
 
 int main()
 {
-	int ar[10] = {0};
-	int max,min;
+	struct Person m1;
+	struct Person m2 = {"Çã³­¼³Çå",13,159.9};
+	struct Person m3;
 	
-	InputData(ar);
-	PrintArray(ar);
-	max = GetMax(ar);
-	min = GetMin(ar);
+	scanf("%s %d %lf",&m3.name,&m3.age,&m3.height);
 	
-	return 0;
+	strcpy(m1.name,"Çã±Õ");
+	m1.age = 19;
+	m1.height = 168.34;
+	printf("%s %d %lf\n",m1.name,m1.age,m1.height);
+	printf("%s %d %lf\n",m2.name,m2.age,m2.height);
+	printf("%s %d %lf",m3.name,m3.age,m3.height);
+	
+	return 0; 
+	
 }
-int InputData(int *p)
-{
-	int i;
-	for(i = 0;i<10;i++){
-		*(p+i) = rand()%99+1;
-	}
-}
-int PrintArray(int ar[])
-{
-	for(int i = 0;i<10;i++){
-		printf("%d ",ar[i]);
-	}
-}
-int  GetMax(int *ar)
-{
-	int a;
-	for(int i = 0;i<10;i++){
-		if(*(ar+i)>a)
-		{
-			a = *(ar+i);
-		}
-	}
-	printf("\n%d",a);
-	return a;
-}
-int  GetMin(int *ar)
-{
-	int b;
-	b = 9999999;
-	for(int i = 0;i<10;i++){
-		if(*(ar+i)<b)
-		{
-			b = *(ar+i);
-		}
-	}
-	printf("\n%d",b);
-	return b;
-}
-

@@ -1,61 +1,23 @@
 #include<stdio.h>
 
+struct Coordi {
+	int x;
+	int y;
+};
+
+struct Circle{
+	struct Coordi cen;
+	double r;
+};
+
 int main()
 {
-	int ar[5][5];
-	int i,j,a;
-	a=1;
-	
-	for(i = 0;i<5;i++){
-		ar[0][i] = a;
-		a++;
-	}
-	a--;
-	for(i = 0;i<5;i++){
-		ar[i][4] = a;
-		a++;
-	}
-	a--;
-	for(i = 4;i>=0;i--){
-		ar[4][i] = a;
-		a++;
-	}
-	a--;
-	for(i = 4;i>=1;i--){
-		ar[i][0] = a;
-		a++;
-	}
-	a--;
-	for(i = 0;i<4;i++){
-		ar[1][i] = a;
-		a++;
-	}
-	a--;
-	for(i = 1;i<4;i++){
-		ar[i][3] = a;
-		a++;
-	}
-	a--;
-	for(i = 3;i>=1;i--){
-		ar[3][i] = a;
-		a++;
-	}
-	a--;
-	for(i = 3;i>=2;i--){
-		ar[i][1] = a;
-		a++;
-	}
-	a--;
-	for(i = 1;i<3;i++){
-		ar[2][i] = a;
-		a++;
-	}
-	a--;
-	for(i = 0; i <5;i++){
-		for(j = 0; j < 5;j++){
-			printf("%3d",ar[i][j]);
-		}
-		printf("\n");
-	}
+	struct Circle c1;
+	struct Circle c2 = {{4,5},12.4};
+	struct Circle c3;
+	scanf("%d %d %lf",&c3.cen.x,&c3.cen.y,&c3.r);
+	printf("c2의 좌표 : (%d,%d)반지름 : %.2lf\n",c2.cen.x,c2.cen.y,c2.r);
+	printf("c3의 좌표 : (%d,%d)반지름 : %.2lf\n",c3.cen.x,c3.cen.y,c3.r);
+		
 	return 0;
 }

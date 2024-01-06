@@ -1,29 +1,21 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include<string.h>
+
+struct Address {
+	char name[10];
+	char phon[20];
+	char home[50];
+};
 
 int main()
 {
-	int arr[9][9];
-	int i,j,a,b,c;
+	struct Address man1;
 	
-	for(i = 0;i<9;i++){
-		for(j =0;j<9;j++){
-			arr[i][j] = rand()%90+1;
-		}
-	}
-	for(i = 0;i<9;i++){
-		for(j =0;j<9;j++){
-			if(arr[i][j] > a)
-			{
-				a = arr[i][j];
-				b = i;
-				c = j;
-			}
-			printf("%d  ",arr[i][j]);
-		}
-		printf("\n");
-	}
-	printf("%d행 %d열",b,c);
+	strcpy(man1.name,"김병학");
+	strcpy(man1.phon,"123-4567-8910");
+	strcpy(man1.home,"씨큐브코딩");
+	
+	printf("man1의 이름 : %s\nman1의 번호 : %s\nman1의 집: %s ",man1.name,man1.phon,man1.home);
+	
 	return 0;
 }

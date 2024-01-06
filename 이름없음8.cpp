@@ -1,27 +1,19 @@
 #include<stdio.h>
+#include<string.h>
+
+struct Person {
+	char name[10];
+	int age;
+	double height;
+};
 
 int main()
 {
-	char ch1, ch2;
+	struct Person list[5] = {{"±Ë¿ØΩ≈",15,178.3},{"±Ë√·√ﬂ",13,173.3},{"ªÁ¥Ÿ«‘",17,183.2},{"ø¯»ø",19,168.9},{"¿Â∫∏∞Ì",13,187.3}};
 	
-	ch1 = getchar();
-	ch2 = getchar();
-	if(ch1<=90)
-	{
-		printf("%c",ch1+32);
-	}
-	else
-	{
-		printf("%c",ch1-32);
-	}
-	if(ch2<=90)
-	{
-		printf("%c",ch2+32);
-	}
-	else
-	{
-		printf("%c",ch2-32);
+	for(int i = 0;i<5;i++){
+		printf("%s %d %lf\n",list[i].name,list[i].age,list[i].height);
 	}
 	return 0;
-	
 }
+
