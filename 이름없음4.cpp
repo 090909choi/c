@@ -1,27 +1,29 @@
-#include<stdio.h>
+#include<stdio.h>	
 #include<string.h>
 
 struct Person{
 	char name[10];
-	int age;
-	double height;
+	double sung;
+	int siu;
 };
 
 int main()
 {
-	struct Person m1;
-	struct Person m2 = {"허난설헌",13,159.9};
-	struct Person m3;
-	
-	scanf("%s %d %lf",&m3.name,&m3.age,&m3.height);
-	
-	strcpy(m1.name,"허균");
-	m1.age = 19;
-	m1.height = 168.34;
-	printf("%s %d %lf\n",m1.name,m1.age,m1.height);
-	printf("%s %d %lf\n",m2.name,m2.age,m2.height);
-	printf("%s %d %lf",m3.name,m3.age,m3.height);
-	
-	return 0; 
-	
+	struct Person list[8] = {{"돌고래",15.5,5},
+							{"범고래",15.4,4},
+							{"상괭이",13.7,1},
+							{"귀신고래",16.5,6},
+							{"수염고래",14.9,8},	
+							{"밍크고래",15.1,3},
+							{"향유고래",17.5,7},
+							{"이빨고래",13.9,2}};
+							
+	for(int i = 1;i<9;i++){
+		for(int j = 0;j<8;j++){
+			if(list[j].siu==i){
+			printf("이름 : %s 성적 : %.1lf 순위 : %d\n",list[j].name,list[j].sung,list[j].siu);
+		}
+		}
+	}
+	return 0;
 }
