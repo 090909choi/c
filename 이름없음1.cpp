@@ -1,41 +1,23 @@
-	#include<stdio.h>
-	
-	int main()
-	{
-	int a,b,c,d,e,f,g,h;
-	scanf("%d %d %d",&a,&b,&c);
-	printf("%d시 %d분 %d초",a,b,c);
-	scanf("%d",&d);
-	if(d>60)
-	{
-		if(d>3600)
-		{
-			a = a - d/3600;
-			h = h - d%3600;
-			b = h/60;
-			c = h%60;
+#include<stdio.h>
+#include<stdlib.h>
 
-		}
-		else
-		{
-			b = b - d/60;
-			c = c - b%60;
-		}
-	}
-	else
+int main()
+{
+	FILE *fp = fopen("Charout.txt","w");
+	 
+	if(fp == NULL)
 	{
-		c = c-d;
+		printf("파일이 없습니다.");
+		exit(1);
 	}
-	if(b<0)
-	{
-		a = a - 1;
-		b = b + 60;
-	}
-	if(c<0)
-	{
-		b = b - 1;
-		c = c + 60;
-	}
-	printf("돌아간 시간: %d시 %d분 %d초",a,b,c);
-	return 0; 
+	
+	fputc('A',fp);
+	fputc('B',fp);
+	fputc('\n',fp);
+	fputc(97,fp);
+	fputc(98,fp);
+	
+	fclose(fp);
+	
+	return 0;
 }

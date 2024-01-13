@@ -1,17 +1,24 @@
 #include<stdio.h>
-
-struct Stop{
-	int j; 
-	int h;
-};
+#include<stdlib.h>
 
 int main()
 {
-	int a,b;
-	scanf("%d %d",&a,&b);
-	struct Stop a1;
-	a1.j = a;
-	a1.h = b;
-	printf("%d초과!",a1.h-a1.j);	
+	FILE *out = fopen("StringFile.txt","w");
+	char str1[] = "Hello C3Coding";
+	char str2[] = "안녕하세요 씨큐브코딩입니다.\n";
+	 
+	if(out == NULL)
+	{
+		printf("파일이 없습니다.\n");
+		exit(1);
+	}
+	
+	fputs("문자열을 출력합니다.\n", out);
+	fputs(str1,out);
+	fputs("\n",out);
+	fputs(str2,out);
+	
+	fclose(out);
+	
 	return 0;
 }

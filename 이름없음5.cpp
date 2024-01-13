@@ -1,21 +1,28 @@
 #include<stdio.h>
-#include<string.h>
-
-struct Address {
-	char name[10];
-	char phon[20];
-	char home[50];
-};
+#include<stdlib.h>
 
 int main()
 {
-	struct Address man1;
+	FILE *in = fopen("StringFile.txt","r");
+	char str1[30];
+	char str2[30];
+	char str3[30];
+	 
+	if(in == NULL)
+	{
+		printf("파일이 없습니다.\n");
+		exit(1);
+	}
 	
-	strcpy(man1.name,"김병학");
-	strcpy(man1.phon,"123-4567-8910");
-	strcpy(man1.home,"씨큐브코딩");
+	fgets(str1, sizeof(str1),in);
+	fgets(str2, sizeof(str2),in);
+	fgets(str3, sizeof(str3),in);
 	
-	printf("man1의 이름 : %s\nman1의 번호 : %s\nman1의 집: %s ",man1.name,man1.phon,man1.home);
+	puts(str1);
+	printf("%s",str2);
+	
+	fputs(str3,stdout);
+	fclose(in);
 	
 	return 0;
 }

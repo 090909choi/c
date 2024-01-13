@@ -1,21 +1,31 @@
 #include<stdio.h>
 
-struct Circle{
-	int x;
-	int y;
-	double r;
-	double ar;
-	double ci;
-};
-
 int main()
 {
-	struct Circle c;
-	scanf("%lf",&c.r);
-	c.ar = c.r*c.r*3.14;
-	c.ci = 2*c.r*3.14;
-	
-	printf("c의 넓이 : %.2lf\nc의 둘레 : %.2lf",c.ar,c.ci);
+	int a,b,c,d,e;
+	scanf("%d %d",&a,&b);
+	scanf("%d",&c);
+	e =0;
+	d =0;
+	if(c<60)
+	{
+		d = b+c;
+		e = a;
+	}
+	else
+	{
+		e = c/60 + a;
+		d = c%60 + b;
+	}
+	if(d>=60)
+	{
+		d = d-60;
+		e += 1;
+	}
+	if(e>23)
+	{
+		e -= 24;
+	}
+	printf("%d시 %d분 ",e,d);
 	return 0;
-	
 }

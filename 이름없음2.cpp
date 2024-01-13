@@ -1,17 +1,24 @@
 #include<stdio.h>
-
-struct Nanugi{
-	int mo;
-	double gab;
-};
+#include<stdlib.h>
 
 int main()
 {
-	int a,b;
-	struct Nanugi a1;
-	scanf("%d %d",&a,&b);
-	a1.gab = a/b;
-	a1.mo = a%b;
-	printf("값 : %d\n몫 : %lf",a1.gab,a1.mo);
+	FILE *fp;
+	char ch;
+	fp = fopen("CharFile.txt","r");
+	 
+	if(fp == NULL)
+	{
+		printf("파일이 없습니다.\n");
+		exit(1);
+	}
+	
+	ch = fgetc(fp);
+	printf("%c",ch);
+	ch = fgetc(fp);
+	putchar(ch);
+	
+	fclose(fp);
+	
 	return 0;
 }

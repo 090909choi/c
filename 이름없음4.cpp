@@ -1,29 +1,30 @@
-#include<stdio.h>	
-#include<string.h>
-
-struct Person{
-	char name[10];
-	double sung;
-	int siu;
-};
+#include<stdio.h>
+#include<stdlib.h>
 
 int main()
 {
-	struct Person list[8] = {{"돌고래",15.5,5},
-							{"범고래",15.4,4},
-							{"상괭이",13.7,1},
-							{"귀신고래",16.5,6},
-							{"수염고래",14.9,8},	
-							{"밍크고래",15.1,3},
-							{"향유고래",17.5,7},
-							{"이빨고래",13.9,2}};
-							
-	for(int i = 1;i<9;i++){
-		for(int j = 0;j<8;j++){
-			if(list[j].siu==i){
-			printf("이름 : %s 성적 : %.1lf 순위 : %d\n",list[j].name,list[j].sung,list[j].siu);
-		}
-		}
+	FILE *in = fopen("NumberFile.txt","r");
+	int n,m;
+	double d1,d2;
+	 
+	if(in == NULL)
+	{
+		printf("파일이 없습니다.\n");
+		exit(1);
 	}
+	
+	printf("정수를 두 개 입력합니다:");
+	fscanf(in,"%d %d",&n,&m);
+	printf("실수를 입력합니다:");
+	fscanf(in,"%lf %lf",&d1,&d2);
+	
+	printf("\n\n\n입력 받은 수들을 모두 출력합니다.\n");
+	printf("%d %d\n",n,m);
+	printf("%lf %lf\n",d1,d2);
+	printf("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+	printf("어디서 입력 받았을까요?");
+
+	fclose(in);
+	
 	return 0;
 }
