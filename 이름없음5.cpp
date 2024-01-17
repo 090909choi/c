@@ -1,28 +1,38 @@
 #include<stdio.h>
-#include<stdlib.h>
 
 int main()
 {
-	FILE *in = fopen("StringFile.txt","r");
-	char str1[30];
-	char str2[30];
-	char str3[30];
-	 
-	if(in == NULL)
+	int i,b,sum;
+	float a;
+	int arr[80];
+	sum = 0;
+	a=5;
+	for(i = 0;i<10;i++){
+		scanf("%d",&arr[i]);
+	}
+	for(i = 0;i<10;i++){
+		scanf("%d",&b);
+		if(b>arr[i])
+		{
+			sum+=1;
+		}
+		if(b == arr[i])
+		{
+			a-=0.5;
+		}
+	}
+	if(sum>a)
 	{
-		printf("파일이 없습니다.\n");
-		exit(1);
+		printf("B");
+	}
+	else if(sum<a)
+	{
+		printf("A");
+	}
+	else if(sum=a)
+	{
+		printf("D");
 	}
 	
-	fgets(str1, sizeof(str1),in);
-	fgets(str2, sizeof(str2),in);
-	fgets(str3, sizeof(str3),in);
-	
-	puts(str1);
-	printf("%s",str2);
-	
-	fputs(str3,stdout);
-	fclose(in);
-	
 	return 0;
-}
+} 

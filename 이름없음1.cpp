@@ -3,21 +3,18 @@
 
 int main()
 {
-	FILE *fp = fopen("Charout.txt","w");
-	 
-	if(fp == NULL)
+	FILE *in = fopen("NumberFile.txt","r");
+	char n[80];
+	if(in == NULL)
 	{
-		printf("파일이 없습니다.");
-		exit(1);
+		printf("파일없음.");
+		exit(1); 
 	}
+	fprintf(in,"ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+	fgets(n,sizeof(n),in);
+	puts(n);
 	
-	fputc('A',fp);
-	fputc('B',fp);
-	fputc('\n',fp);
-	fputc(97,fp);
-	fputc(98,fp);
-	
-	fclose(fp);
+	fclose(in);
 	
 	return 0;
 }

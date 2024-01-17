@@ -3,22 +3,28 @@
 
 int main()
 {
-	FILE *out = fopen("StringFile.txt","w");
-	char str1[] = "Hello C3Coding";
-	char str2[] = "안녕하세요 씨큐브코딩입니다.\n";
-	 
-	if(out == NULL)
+	FILE *in = fopen("File.txt","a");
+	int n,sum,a;
+	int j;
+	if(in == NULL)
 	{
-		printf("파일이 없습니다.\n");
-		exit(1);
+		printf("파일없음.");
+		exit(1); 
 	}
-	
-	fputs("문자열을 출력합니다.\n", out);
-	fputs(str1,out);
-	fputs("\n",out);
-	fputs(str2,out);
-	
-	fclose(out);
+	scanf("%d",&n);
+//	fprintf(in,"%d의 약수 :",n);
+	for(j = 0;j<=n;j++){
+		if(n%j==0)
+		{
+			sum+=1;
+			fputc(j);
+			a+=j;
+		}
+	}	
+//	fprintf(in,"\n약수의 개수 : %d",sum);
+//	fprintf(in,"\n약수의 합 : %d",a);
+//	
+	fclose(in);
 	
 	return 0;
 }
