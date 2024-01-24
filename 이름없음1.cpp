@@ -1,20 +1,28 @@
 #include<stdio.h>
-#include<stdlib.h>
 
 int main()
 {
-	FILE *in = fopen("NumberFile.txt","r");
-	char n[80];
-	if(in == NULL)
+	int a,b,c,d;
+	scanf("%d %d %d %d",a,b,c,d);
+	if(a+b+c+d == 0)
 	{
-		printf("파일없음.");
-		exit(1); 
+		printf("D");
 	}
-	fprintf(in,"ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-	fgets(n,sizeof(n),in);
-	puts(n);
-	
-	fclose(in);
-	
+	if(a+b+c+d == 1)
+	{
+		printf("C");
+	}
+	if(a+b+c+d == 2)
+	{
+		printf("B");
+	}
+	if(a+b+c+d == 3)
+	{
+		printf("A");
+	}
+	if(a+b+c+d == 4)
+	{
+		printf("E");
+	}
 	return 0;
 }
