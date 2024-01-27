@@ -1,23 +1,14 @@
 #include<stdio.h>
-#include<string.h>
 
 int main()
 {
-	int n,a,b;
-	b = 0;
-	scanf("%d",&n);
-	while(n>0){
-		a = n%10;
-		b = b+a;
-		n/=10;
-	}
-	n = 0;
-	a = 0;
-	while(b>0){
-		a = b%10;
-		n = n+a;
-		b/=10;
-	}
-	printf("%d",n);
+	char str1[15],str2[15];
+	
+	scanf("%s",&str1);
+	printf("str1 = %s\n",str1);
+	scanf("%s%s",&str1,&str2);
+	printf("str1 = %s\n",str1);
+	printf("str2 = %s\n",str2);
+	
 	return 0;
 }

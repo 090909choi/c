@@ -2,24 +2,19 @@
 
 int main()
 {
-	int n=1;
-	int a = 1;
-	for(int i=100;i>=1;i--)
-	{
-		a=1;
-		printf("%d :",n);
-		for(int z=1;z<=i;z++)
+	int N,K,a;
+	int arr[10];
+	
+	a = 0;
+	scanf("%d %d",&N,&K);
+	for(int i = 1;i<=N;i++){
+		if(N%i==0)
 		{
-			if(n%a==0)
-			{
-				printf("%d\n",a);
-				n=n+1;
-			}
-			else
-			{
-				a++;
-			}
+			arr[a]=i;
+			a++;
 		}
-	}	
+	}
+	printf("%d",arr[K-1]);
+	
 	return 0;
 }

@@ -1,20 +1,13 @@
 #include<stdio.h>
+#include<conio.h>
 
 int main()
 {
-	char ch1;
+	char ch;
 	
-	int i = 65;
-	while(i<=90)
-	{
-		printf("%c ",i);
-		i++;
-	}
-	printf("\n");
-	int z = 97;
-	while(z<=122)
-	{
-		printf("%c ",z);
-		z++;
-	}
+	ch = getche();
+	printf("\nch = %d : %c\n",ch,ch);
+	putchar(ch);
+	
+	return 0;
 }

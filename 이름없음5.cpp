@@ -2,37 +2,13 @@
 
 int main()
 {
-	int i,b,sum;
-	float a;
-	int arr[80];
-	sum = 0;
-	a=5;
-	for(i = 0;i<10;i++){
-		scanf("%d",&arr[i]);
-	}
-	for(i = 0;i<10;i++){
-		scanf("%d",&b);
-		if(b>arr[i])
-		{
-			sum+=1;
-		}
-		if(b == arr[i])
-		{
-			a-=0.5;
-		}
-	}
-	if(sum>a)
-	{
-		printf("B");
-	}
-	else if(sum<a)
-	{
-		printf("A");
-	}
-	else if(sum=a)
-	{
-		printf("D");
-	}
+	int a;
+	char b;
+	
+	scanf("%d",&a);
+	getchar();
+	scanf("%c",&b);
+	printf("%d %c",a,b);
 	
 	return 0;
-} 
+}

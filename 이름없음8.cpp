@@ -1,19 +1,21 @@
 #include<stdio.h>
-#include<string.h>
-
-struct Person {
-	char name[10];
-	int age;
-	double height;
-};
 
 int main()
 {
-	struct Person list[5] = {{"±Ë¿ØΩ≈",15,178.3},{"±Ë√·√ﬂ",13,173.3},{"ªÁ¥Ÿ«‘",17,183.2},{"ø¯»ø",19,168.9},{"¿Â∫∏∞Ì",13,187.3}};
+//	char ch1,ch2,ch3;
+//	
+//	ch1 = getchar();
+//	ch2 = getchar();
+//	ch3 = getchar();
+//	printf("ch1 = %d : %c\n",ch1,ch1);
+//	printf("ch2 = %d : %c\n",ch2,ch2);
+//	printf("ch3 = %d : %c\n",ch3,ch3);
+
+	char str[80];
 	
-	for(int i = 0;i<5;i++){
-		printf("%s %d %lf\n",list[i].name,list[i].age,list[i].height);
-	}
+	gets(str);
+	printf("%s\n",str);
+	puts(str);
+
 	return 0;
 }
-
