@@ -2,14 +2,29 @@
 
 int main()
 {
-	int a,b,c;
-	
-	scanf("%d",&a);
-	printf("a=%d\n",a);
-	scanf("%d%d",&a,&b);
-	printf("a = %d b = %d\n",a,b);
-	scanf("%d%d%d",&a,&b,&c);
-	printf("a = %d b = %d c = %d\n",a,b,c);
-	
-	return 0;
+	int N,a,m,count;
+	scanf("%d",&N);
+	int arr[N];
+	int ar[N];
+	count = 1;
+	for(int i = 0;i<N;i++){
+		scanf("%d",&a);
+		arr[i] = a;
+	}
+	for(int i = 0;i<N;i++){
+		if(arr[i]>m)
+		{
+			m = arr[i];
+			ar[i] = 1;
+			
+		}
+		else if(arr[i] == m)
+		{
+			ar[i]  = 1;
+			count  +=1;
+		}
+	}
+	for(int i = 0;i<N;i++){
+		printf("%d  ",arr[i]);
+	}
 }
