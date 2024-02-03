@@ -1,21 +1,26 @@
-#include<stdio.h>
+#include <stdio.h>
+#include<conio.h>
+#include<windows.h>
+
+void GotoXY(int x,int y);
 
 int main()
 {
-//	char ch1,ch2,ch3;
-//	
-//	ch1 = getchar();
-//	ch2 = getchar();
-//	ch3 = getchar();
-//	printf("ch1 = %d : %c\n",ch1,ch1);
-//	printf("ch2 = %d : %c\n",ch2,ch2);
-//	printf("ch3 = %d : %c\n",ch3,ch3);
-
-	char str[80];
+	int i;
+	int j;
 	
-	gets(str);
-	printf("%s\n",str);
-	puts(str);
-
+	do
+	{
+		GotoXY(0,0);
+		printf("%d",i);
+		Sleep(1000);
+		i++;
+	}while(1);
 	return 0;
 }
+
+void GotoXY(int x,int y){
+	COORD pos = {x,y};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+

@@ -1,19 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
+#include<conio.h>
+#include<windows.h>
 
 int main()
 {
-	int i,j,m,n ;
-	scanf("%d %d",&m,&n);
-	for(i = m;i<n;i++){
-		for(j = 2;j<i;j++){
-			if(i%j==0){
-				break;
-			}
-			if(i-1==j)
-			{
-				printf("%d ",i);
-			}
-		}
-	}
+	int x,y;
+	COORD pos = {40,20};
+	
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+	printf("Hello C3coding");
+	getch();
+	
 	return 0;
 }
