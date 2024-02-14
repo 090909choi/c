@@ -1,32 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<conio.h>
 #include<windows.h>
 
-void GotoXY(int x,int y){
-	COORD pos = {x,y};
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-}
 
 int main()
 {
+	int i,a,b,d;
+	char c;
+	scanf("%d %d",&a,&b);
 	COORD pos;
+	pos.X = a;
+	pos.Y = b;
 	
-	do
-	{
-		pos.X = 30;
-		pos.Y = 24;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-		
-		printf("ÁÂÇ¥ :");
-		scanf("%d%d",&pos.X,&pos.Y);
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-		printf("%s","¢½");
-		
-		pos.X = 30;
-		pos.Y = 24;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-		printf("				");
-	}while(1);
-	
-	return 0;
+	scanf("%d",&d);
+	scanf("%c",&c);
+	for(i = 0;i<d;i++){
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+		printf("%c",c);
+		pos.X = pos.X + 1;
+		Sleep(1000);
+	}
 }

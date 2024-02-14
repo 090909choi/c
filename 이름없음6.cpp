@@ -1,22 +1,20 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<conio.h>
 #include<windows.h>
 
 int main()
 {
-	int x,y;
+	int i,a,b;
+	char c;
+	scanf("%d %d",&a,&b);
 	COORD pos;
+	pos.X = a;
+	pos.Y = b;
 	
-	do
-	{
-		pos.X = 0;
-		pos.Y = 0;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-		printf("커서의 위치를 입력하세요:");
-		scanf("%d %d",&pos.X,&pos.Y);
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-		printf("§▣");
-		
-	}while (pos.X <= 80 && pos.Y <= 24);
-	return 0; 
+	for(i = 0;i<10;i++){
+		scanf("%c",&c);
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+		printf("%d",c);
+		pos.X = pos.X - 1;
+	}
 }

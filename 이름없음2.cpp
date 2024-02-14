@@ -1,15 +1,20 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<conio.h>
 #include<windows.h>
 
+
 int main()
 {
-	int x,y;
-	COORD pos = {1,0};
+	COORD pos;
+	int q = 10;
+	pos.X = 40;
+	pos.Y = 0;
 	
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-	printf("<-:커서 시작위치(%d %d)",pos.X,pos.Y);
-	getch();
-	
-	return 0;
+	for(int i = 0;i<10;i++){
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+		printf("%d",q);
+		q+=10;
+		pos.Y = pos.Y + 1;
+		Sleep(1000);
+	}
 }

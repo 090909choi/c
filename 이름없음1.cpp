@@ -1,15 +1,20 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<conio.h>
 #include<windows.h>
 
+
 int main()
 {
-	int x,y;
-	COORD pos = {40,20};
+	COORD pos;
+	int q = 10;
+	pos.X = 20;
+	pos.Y = 4;
 	
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-	printf("Hello C3coding");
-	getch();
-	
-	return 0;
+	for(int i = 0;i<10;i++){
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+		printf("%d",q);
+		q+=10;
+		pos.X = pos.X + 2;
+		Sleep(1000);
+	}
 }
