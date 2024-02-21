@@ -1,20 +1,17 @@
 #include<stdio.h>
-#include<conio.h>
-#include<windows.h>
-
 
 int main()
 {
-	COORD pos;
-	int q = 10;
-	pos.X = 40;
-	pos.Y = 0;
+	char* sp1 = "C3coding";
+	char* sp2 = "C3coding";
 	
-	for(int i = 0;i<10;i++){
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-		printf("%d",q);
-		q+=10;
-		pos.Y = pos.Y + 1;
-		Sleep(1000);
-	}
+	printf("%d\n",sp1 ==  sp2);
+	printf("%d\n",sp1 ==  "C3coding");
+	printf("%d\n",sp2 ==  "C3coding");
+	printf("%d\n","C3coding" ==  "C3coding");
+	printf("%d\n",sp1 ==  "c3coding");
+	
+	printf("%d %d\n",sp1,"c3coding");
+	printf("%d %d\n",sp2,"c3coding");
+	return 0;
 }

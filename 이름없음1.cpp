@@ -1,20 +1,15 @@
 #include<stdio.h>
-#include<conio.h>
-#include<windows.h>
-
 
 int main()
 {
-	COORD pos;
-	int q = 10;
-	pos.X = 20;
-	pos.Y = 4;
+	char c1 = 'A';
+	char c2 = 'B';
 	
-	for(int i = 0;i<10;i++){
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-		printf("%d",q);
-		q+=10;
-		pos.X = pos.X + 2;
-		Sleep(1000);
-	}
+	printf("%d\n",c1+c2);
+	printf("%d\n",c1>c2);
+	printf("%d\n",c1==c2);
+	printf("%d\n",'b'>c2);
+	printf("%d\n",'a' - c1);
+	
+	return 0;
 }

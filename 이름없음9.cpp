@@ -1,35 +1,19 @@
 #include<stdio.h>
-#include<conio.h>
-#include<windows.h>
-
+#include<time.h>
+#include<stdlib.h>
 
 int main()
 {
-	COORD pos;
-	char ar[9] = {'A','B','C','D','E','F','G','H','I'};
-	char n;
-	scanf("%c",&n);
-	pos.X = 40;
-	pos.Y = 12;
-	for(int i = 0;i<9;i++){
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-		printf("%c",ar[i]);
-		if(n == 'R')
-		{
-			pos.X+=1;
-		}
-		if(n == 'L')
-		{
-			pos.X-=1;
-		}
-		if(n == 'U')
-		{
-			pos.Y-=1;
-		}
-		if(n == 'D')
-		{
-			pos.Y+=1;
-		}
-		Sleep(1000);
+	int a;
+	double* ar;
+	scanf("%d",&a);
+	ar = (double*)malloc(sizeof(double)*a);
+	for(int i = 0;i<a;i++){
+		scanf("%lf",&ar[i]);
 	}
+	for(int i = 0;i<a;i++){
+		printf("%lf ",ar[i]);
+	}
+	
+	return 0;
 }

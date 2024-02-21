@@ -1,20 +1,22 @@
 #include<stdio.h>
-#include<conio.h>
-#include<windows.h>
-
+#include<string.h>
 
 int main()
 {
-	COORD pos;
-	int q = 999;
-	pos.X = 40;
-	pos.Y = 10;
+	char*sp = "C3coding";
+	char str[] = "C3coding";
+	int res;
 	
-	for(int i = 0;i<10;i++){
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-		printf("%d",q);
-		q-=111;
-		pos.Y = pos.Y + 1;
-		Sleep(1000);
-	}
+	res = strcmp(sp,str);
+	printf("%d\n",res);
+	res = strcmp(sp,"C3coding");
+	printf("%d\n",res);
+	res = strcmp("C3coding","C3coding");
+	printf("%d\n",res);
+	
+	res = strcmp("test","text");
+	printf("%d\n",res);
+	res = strcmp("test","text");
+	printf("%d\n",res);
+	return 0;
 }

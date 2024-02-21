@@ -1,20 +1,20 @@
 #include<stdio.h>
-#include<conio.h>
-#include<windows.h>
+#include<stdlib.h>
 
 int main()
 {
-	int i,a,b;
-	char c;
-	scanf("%d %d",&a,&b);
-	COORD pos;
-	pos.X = a;
-	pos.Y = b;
+	int* p;
+	p = (int*)malloc(sizeof(int)*5);
 	
-	for(i = 0;i<10;i++){
-		scanf("%c",&c);
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-		printf("%d",c);
-		pos.X = pos.X - 1;
+	for(int i = 0;i<5;i++){
+		p[i] = i;
+		printf("%d ",p[i]);
 	}
+	printf("\n");
+	for(int i = 0;i<5;i++){
+		printf("%d ",*p +i);
+	}
+	free(p);
+	
+	return 0;
 }
