@@ -1,19 +1,12 @@
 #include<stdio.h>
-#include<time.h>
-#include<stdlib.h>
 
 int main()
 {
-	int a;
-	double* ar;
-	scanf("%d",&a);
-	ar = (double*)malloc(sizeof(double)*a);
-	for(int i = 0;i<a;i++){
-		scanf("%lf",&ar[i]);
+	for(int i = 5;i>=1;i--){
+		for(int j = i;j<=5;j++){
+			printf("%2d",j);
+		}
+		printf("\n");
 	}
-	for(int i = 0;i<a;i++){
-		printf("%lf ",ar[i]);
-	}
-	
 	return 0;
 }

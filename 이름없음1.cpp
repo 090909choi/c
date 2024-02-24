@@ -1,15 +1,14 @@
 #include<stdio.h>
+#include<conio.h>
 
 int main()
 {
-	char c1 = 'A';
-	char c2 = 'B';
+	int ch1,ch2;
 	
-	printf("%d\n",c1+c2);
-	printf("%d\n",c1>c2);
-	printf("%d\n",c1==c2);
-	printf("%d\n",'b'>c2);
-	printf("%d\n",'a' - c1);
+	ch1 = getch();
+	ch2 = getch();
+	printf("%d %d\n",ch1,ch2);
+	printf("%x %x\n",ch1,ch2);
 	
 	return 0;
 }

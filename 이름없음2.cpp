@@ -1,17 +1,16 @@
 #include<stdio.h>
+#include<conio.h>
 
 int main()
 {
-	char* sp1 = "C3coding";
-	char* sp2 = "C3coding";
+	unsigned char ch;
 	
-	printf("%d\n",sp1 ==  sp2);
-	printf("%d\n",sp1 ==  "C3coding");
-	printf("%d\n",sp2 ==  "C3coding");
-	printf("%d\n","C3coding" ==  "C3coding");
-	printf("%d\n",sp1 ==  "c3coding");
+	do
+	{
+		ch = getch();
+		printf("%d %x : %c",ch,ch,ch);
+		printf("\n");
+	}while(ch != 13);
 	
-	printf("%d %d\n",sp1,"c3coding");
-	printf("%d %d\n",sp2,"c3coding");
 	return 0;
 }

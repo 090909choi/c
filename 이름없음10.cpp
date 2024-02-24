@@ -1,23 +1,12 @@
-#include <stdio.h>
-#include<conio.h>
-#include<windows.h>
-
-void GotoXY(int x,int y);
+#include<stdio.h>
 
 int main()
 {
-	int ar[10] = {10,20,30,40,50,60,70,80,90,100};
-	int x,y;
-	GotoXY(20,4);
-	for(int i = 0;i<10;i++){
-		printf("%d ",ar[i]);
-		Sleep(1000);
+	for(int i = 5;i>=1;i--){
+		for(int j = i;j>=1;j--){
+			printf("%2d",j);
+		}
+		printf("\n");
 	}
 	return 0;
 }
-
-void GotoXY(int x,int y){
-	COORD pos = {x,y};
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-}
-
