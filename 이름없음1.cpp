@@ -1,14 +1,45 @@
 #include<stdio.h>
 #include<conio.h>
+#include<windows.h>
+#define X_END 79
+#define Y_END 24
+
+void GotoXY(int x,int y);
+void Move_UpDown_Key(char key,int *x,int *y);
 
 int main()
 {
-	int ch1,ch2;
+	char key;
+	int x = 40,y = 0;
 	
-	ch1 = getch();
-	ch2 = getch();
-	printf("%d %d\n",ch1,ch2);
-	printf("%x %x\n",ch1,ch2);
-	
+	do
+	{
+		GotoXY(x,y);
+		printf("¢Ã");
+		key = getch(); 
+		key = getch(); 
+		Move_UpDown_Key(key,&x,&y);
+	}while(key != 27);
 	return 0;
+}
+
+void GotoXY(int x,int y)
+{
+	COORD Pos = {x,y};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Pos);
+}
+
+void Move_UpDown_Key(char key,int *x,int *y)
+{
+	switch(key)
+	{
+		case 72:
+			*y = *y - 1;
+			if(*y<1)*y = Y_END;
+			break;
+		case 80:
+			*y = *y + 1;
+			if(*y>Y_END)*y = Y_END;
+			break;
+	}
 }
