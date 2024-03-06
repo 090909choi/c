@@ -1,34 +1,58 @@
 #include<stdio.h>
-#include<windows.h>
-
-void GotoXY(int x,int y);
 
 int main()
 {
-	int x = 0,y = 1,temp = 2,count = 0;
-	
-	while(count < 5)
-	{
-		x += temp;
-		if(x>40)
-		{
-			temp = -2;
-		}
-		if(x<2)
-		{
-			temp = 2;
-			count++;
-		}
-		system("cls");
-		GotoXY(x,y);
-		printf("бр");
-		Sleep(50);
+	int a,b,c,d;
+	char e,f,g;
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	if(a+b+c+d==0){
+		e = 'D';
 	}
-	printf("\n");
- } 
- 
- void GotoXY(int x,int y)
- {
- 	COORD Pos =  {x - 1,y - 1};
- 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Pos);
- }
+	else if(a+b+c+d==1){
+		e = 'c';
+	}
+	else if(a+b+c+d==2){
+		e = 'B';
+	}
+	else if(a+b+c+d==3){
+		e = 'A';
+	}
+	else if(a+b+c+d==4){
+		e = 'E';
+	}
+	
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	if(a+b+c+d==0){
+		f = 'D';
+	}
+	else if(a+b+c+d==1){
+		f = 'c';
+	}
+	else if(a+b+c+d==2){
+		f = 'B';
+	}
+	else if(a+b+c+d==3){
+		f = 'A';
+	}
+	else if(a+b+c+d==4){
+		f = 'E';
+	}
+	
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+	if(a+b+c+d==0){
+		g = 'D';
+	}
+	else if(a+b+c+d==1){
+		g = 'c';
+	}
+	else if(a+b+c+d==2){
+		g = 'B';
+	}
+	else if(a+b+c+d==3){
+		g = 'A';
+	}
+	else if(a+b+c+d==4){
+		g = 'E';
+	}
+	printf("%c\n%c\n%c\n",e,f,g);
+}

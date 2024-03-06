@@ -2,11 +2,14 @@
 
 int main()
 {
-	for(int i = 1;i<=5;i++){
-		for(int j = 1;j<=i;j++){
-			printf("%2d",j);
-		}
-		printf("\n");
-	}
-	return 0;
+	int a,b,c,d,e,ALL;
+	scanf("%d %d %d %d %d",&a,&b,&c,&d,&e);
+	a = a*a;
+	b = b*b;
+	c = c*c;
+	d = d*d;
+	e = e*e;
+	ALL = a+b+c+d+e;
+	ALL  = ALL % 10;
+	printf("%d",ALL);
 }
