@@ -2,11 +2,18 @@
 
 int main()
 {
-	for(int i = 5;i>=1;i--){
-		for(int j = i;j<=5;j++){
-			printf("%2d",j);
-		}
-		printf("\n");
+	int day,count;
+	int car[80];
+	scanf("%d",&day);
+	for(int i = 0;i<5;i++){
+		scanf("%d",&car[i]);
 	}
+	for(int i = 0;i<5;i++){
+		if(car[i] == day)
+		{
+			count++;
+		}
+	}
+	printf("%d",count);
 	return 0;
 }

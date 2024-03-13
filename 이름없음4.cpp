@@ -2,18 +2,19 @@
 
 int main()
 {
-	int N,i,M,d;
-	d = 0;
-	scanf("%d %d",&N,&M);
-	scanf("%d",&i);
-	int arr[N];
-	while(d<N)
-	{
-		for(int j = 0; j < M;j++){
-		arr[d] = j;
-		d++;
+	int arr[80];
+	int a,b,count;
+	count = 0;
+	scanf("%d",&a);
+	for(int i = 0;i<a;i++){
+		scanf("%d",&arr[i]);
+	}
+	for(int i = 0;i<a;i++){
+		scanf("%d",&b);
+		if(b==arr[i])
+		{
+			count = count + 1;
 		}
 	}
-	printf("%d",arr[i]);
-	return 0;
+	printf("%d",count);
 }

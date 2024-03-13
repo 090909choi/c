@@ -2,12 +2,25 @@
 
 int main()
 {
-	int N,a,b,c,d;
+	int N,Ai,a;
+	a = 0;
 	scanf("%d",&N);
-	a =  N / 1000;
-	d = N%10;
-	c = (N%100-d)/10;
-	b = N/100 - 10*a;
-	printf("%d",a+b+c+d);
-	
+	for(int i = 0;i<N;i++){
+		scanf("%d",&Ai);
+		a = a+Ai;
+	}
+	a = a/N;
+	if(a>=80)
+	{
+		printf("easy");
+	}
+	else if(a>=60)
+	{
+		printf("normal");
+	}
+	else if(a<=60)
+	{
+		printf("hard");
+	}
+	return 0;
 }

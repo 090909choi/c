@@ -2,11 +2,16 @@
 
 int main()
 {
-	for(int i = 5;i>=1;i--){
-		for(int j = i;j>=1;j--){
-			printf("%2d",j);
+	int Na,D,count,B;
+	count = 0;
+	for(int i = 0;i<4;i++){
+		scanf("%d %d",&Na,&D);
+		count = count + D - Na;
+		if(B<count)
+		{
+			B = count;
 		}
-		printf("\n");
 	}
+	printf("%d ",B);
 	return 0;
 }

@@ -2,26 +2,32 @@
 
 int main()
 {
-	int H,M,DM;
-	scanf("%d %d",&H,&M);
-	scanf("%d",&DM);
-	if(DM<60)
-	{
-		M = M + DM;
+	int arr[80];
+	int ar[80];
+	int count = 0;
+	for(int i = 0;i<10;i++){
+		scanf("%d",&arr[i]);
 	}
-	else if(DM>60)
-	{
-		H = H + DM/60;
-		M = M + DM%60;
+	for(int j = 0;j<10;j++){
+		scanf("%d",&ar[j]);
 	}
-	if(M>60)
-	{
-		M -= 60;
-		H += 1;
+	for(int n = 0;n<10;n++){
+		if(arr[n]>ar[n])
+		{
+			count++;
+		}
 	}
-	if(H>23)
+	if(count>5)
 	{
-		H = H - 24;
+		printf("A");
 	}
-	printf("%d %d",H,M);
+	if(count=5)
+	{
+		printf("D");
+	}
+	if(count<5)
+	{
+		printf("B");
+	}
+	return 0;
 }

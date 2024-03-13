@@ -2,14 +2,20 @@
 
 int main()
 {
-	int a,b,c,d,e,ALL;
-	scanf("%d %d %d %d %d",&a,&b,&c,&d,&e);
-	a = a*a;
-	b = b*b;
-	c = c*c;
-	d = d*d;
-	e = e*e;
-	ALL = a+b+c+d+e;
-	ALL  = ALL % 10;
-	printf("%d",ALL);
+	int N,M,count;
+	count = 0;
+	scanf("%d %d",&N,&M);
+	for(int i = N+1;i<M;i++){
+		for(int j = 2;j < i;j++){
+			if(i%j==0)
+			{
+				break;
+			}
+			if(j == i-1)
+			{
+				count++;
+			}
+		}
+	}
+	printf("%d",count);
 }
