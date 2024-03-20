@@ -1,17 +1,20 @@
 #include<stdio.h>
-#include<vector>
-using namespace std;
 
 int main()
 {
-	vector<int>v;
- 	for(int i = 0;i<10;i++){
- 		int a;
- 		scanf("%d",&a);
- 		v.push_back(a);
+int n,max = 0,sum = 0;
+	scanf("%d",&n);
+	int ar[1000];
+	for(int i = 0;i<n;i++){
+		scanf("%d",&ar[i]);
 	}
-	for(int i = v.size()-1;i>=0;i--){
-		printf("%d\n",v[i]);
+	for(int i = 0;i<n;i++){
+		if(ar[i+1] - ar[i] > max)
+		{
+			max =ar[i+1] - ar[i];
+			sum = i;
+		}
 	}
+	printf("%d %d",sum+1,sum+2);
 	return 0;
 }

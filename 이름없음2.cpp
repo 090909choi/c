@@ -1,23 +1,21 @@
 #include<stdio.h>
-#include<vector>
-using namespace std;
 
 int main()
 {
-	int M,N,all = 0;
-	vector<int>v;
-	scanf("%d %d",&M,&N);
-	for(int i = 1;i*i>=N;i++){
-		if(i*i > M && i*i < N)
-		{
-			v.push_back(i*i);
-			printf("%d",i*i);
+	int arr[100] = {0};
+	int a,count,max;
+	scanf("%d",&a);
+	for(int i = 0;i<8;i++){
+		arr[a%10]++;
+		a/=10;
+	}
+	arr[6] /= 2;
+	arr[9] /= 2;
+	for(int i = 0;i < 10;i++){
+		if(max<arr[i]){
+			max = arr[i];
 		}
 	}
-	for(int i = 0;i<v.size()-1;i++){
-		all += v[i];
-	}
-	printf("%d\n",v[0]);
-	printf("%d",all);
+	printf("%d",max);
 	return 0;
 }
