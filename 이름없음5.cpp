@@ -2,21 +2,19 @@
 
 int main()
 {
-	int N,count,h;
-	scanf("%d",&N);
-	h = 0;
-	count = 0;
-	while(N>=10)
-	{
-		h = 0;
-		while(N)
-		{
-			h += N %10;
-			N /= 10;
-		}
-		N = h;
-		count++;
+	int n,max = 0,sum = 0;
+	scanf("%d",&n);
+	int ar[1000];
+	for(int i = 0;i<n;i++){
+		scanf("%d",&ar[i]);
 	}
-	printf("%d",count);
+	for(int i = 0;i<n;i++){
+		if(ar[i+1] - ar[i] > max)
+		{
+			max =ar[i+1] - ar[i];
+			sum = i;
+		}
+	}
+	printf("%d %d",sum+1,sum+2);
 	return 0;
 }

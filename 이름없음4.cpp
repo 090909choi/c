@@ -2,19 +2,23 @@
 
 int main()
 {
-	int arr[80];
-	int a,b,count;
-	count = 0;
-	scanf("%d",&a);
-	for(int i = 0;i<a;i++){
-		scanf("%d",&arr[i]);
+	int n,ar[10000],max = 0,min = 10000;
+	int all = 0;
+	scanf("%d",&n);
+	for(int i = 0;i<n;i++){
+		scanf("%d",&ar[i]);
 	}
-	for(int i = 0;i<a;i++){
-		scanf("%d",&b);
-		if(b==arr[i])
+	for(int i = 0;i<n;i++){
+		if(max<ar[i])
 		{
-			count = count + 1;
+			max = ar[i];
 		}
+		if(min>ar[i])
+		{
+			min = ar[i];
+		}
+		all += ar[i];
 	}
-	printf("%d",count);
+	printf("%d",(all-max-min)/n);
+	return 0;
 }

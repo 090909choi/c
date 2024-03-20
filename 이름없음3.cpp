@@ -1,26 +1,21 @@
 #include<stdio.h>
+#include<vector>
+using namespace std;
 
 int main()
 {
-	int N,Ai,a;
-	a = 0;
-	scanf("%d",&N);
-	for(int i = 0;i<N;i++){
-		scanf("%d",&Ai);
-		a = a+Ai;
+	long M,N,all = 0;
+	vector<int>v;
+	scanf("%d %d",&M,&N);
+	for(int i = 1;i*i<=N;i++){
+		if(i*i >= M && i*i <= N)
+		{
+			v.push_back(i*i);
+		}
 	}
-	a = a/N;
-	if(a>=80)
-	{
-		printf("easy");
+	for(int i = 0;i<v.size();i++){
+		all += v[i];
 	}
-	else if(a>=60)
-	{
-		printf("normal");
-	}
-	else if(a<=60)
-	{
-		printf("hard");
-	}
-	return 0;
+	printf("%lld\n",all);
+	printf("%d",v[0]);
 }

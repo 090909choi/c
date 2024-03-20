@@ -1,25 +1,23 @@
 #include<stdio.h>
+#include<vector>
+using namespace std;
 
 int main()
 {
-	int A,B,C;
-	scanf("%d %d",&A,&B);
-	scanf("%d",&C);
-	if(B+C >= 60)
-	{
-		A = (B+C)/60 + A;
-		B = (B+C)%60;
+	int M,N,all = 0;
+	vector<int>v;
+	scanf("%d %d",&M,&N);
+	for(int i = 1;i*i>=N;i++){
+		if(i*i > M && i*i < N)
+		{
+			v.push_back(i*i);
+			printf("%d",i*i);
+		}
 	}
-	else
-	{
-		B = B+C;
+	for(int i = 0;i<v.size()-1;i++){
+		all += v[i];
 	}
-	printf("%d %d",A,B);
-	if(A > 23)
-	{
-		A = A - 24;
-	}
-	
-	printf("%d %d",A,B);
+	printf("%d\n",v[0]);
+	printf("%d",all);
 	return 0;
 }
