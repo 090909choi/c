@@ -2,20 +2,31 @@
 
 int main()
 {
-	int arr[100] = {0};
-	int a,count,max;
-	scanf("%d",&a);
-	for(int i = 0;i<8;i++){
-		arr[a%10]++;
-		a/=10;
-	}
-	arr[6] /= 2;
-	arr[9] /= 2;
-	for(int i = 0;i < 10;i++){
-		if(max<arr[i]){
-			max = arr[i];
+	int n,m,a,b;
+	int map[100][100];
+	scanf("%d %d",&n,&m);
+	for(int i = 0;i<m;i++){
+		for(int j = 0;j<n;j++){
+			scanf("%d",&map[i][j]);
+			if(map[i][j] == 2)
+			{
+				a = i;
+				b = j;
+			}
 		}
 	}
-	printf("%d",max);
+	while(1){
+			if(map[a+1][b] == 1 && map[a][b+1] == 1)
+		{
+			printf("%d %d",a,b);
+			break;
+		}
+		else if(map[a+1][b] == 0){
+			a++;
+		}
+		else if(map[a+1][b] == 1){
+			b++;
+		}
+	}
 	return 0;
 }
