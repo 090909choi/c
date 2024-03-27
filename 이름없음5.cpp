@@ -2,19 +2,22 @@
 
 int main()
 {
-	int n,max = 0,sum = 0;
-	scanf("%d",&n);
-	int ar[1000];
-	for(int i = 0;i<n;i++){
-		scanf("%d",&ar[i]);
+	int n,m;
+	int good[100][100];
+	scanf("%d %d",&n,&m);
+	for(int i = 0;i<m;i++){
+		int from,to;
+		scanf("%d %d",&from,&to);
+		good[from-1][to-1] = 1;
 	}
 	for(int i = 0;i<n;i++){
-		if(ar[i+1] - ar[i] > max)
-		{
-			max =ar[i+1] - ar[i];
-			sum = i;
+		for(int j = 0;j<n;j++){
+			if(good[i][j] == good[j][i] && good[j][i] == 1)
+			{
+				printf("%d ",j+1);
+			}
 		}
+		printf("\n");
 	}
-	printf("%d %d",sum+1,sum+2);
 	return 0;
 }

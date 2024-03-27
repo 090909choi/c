@@ -2,23 +2,22 @@
 
 int main()
 {
-	int n,ar[10000],max = 0,min = 10000;
-	int all = 0;
-	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		scanf("%d",&ar[i]);
+	int n,m;
+	int fr[100][100];
+	scanf("%d %d",&n,&m);
+	for(int i = 0;i<m;i++){
+		int from,to;
+		scanf("%d %d",&from,&to);
+		fr[from-1][to-1] = 1;
 	}
 	for(int i = 0;i<n;i++){
-		if(max<ar[i])
-		{
-			max = ar[i];
+		for(int j = 0;j<n;j++){
+			if(fr[i][j] == 1)
+			{
+				printf("%d",j+1);
+			}
 		}
-		if(min>ar[i])
-		{
-			min = ar[i];
-		}
-		all += ar[i];
+		printf("\n");
 	}
-	printf("%d",(all-max-min)/n);
 	return 0;
 }

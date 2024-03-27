@@ -2,31 +2,24 @@
 
 int main()
 {
-	int a[10],b[10],aw = 0,bw = 0;
-	char p;
-	
-	for(int i = 0;i<10;i++){
-		scanf("%d",&a[i]);
-	}
-	for(int i = 0;i<10;i++){
-		scanf("%d",&b[i]);
-	}
-	for(int i = 0;i<10;i++){
-		if(a[i] == b[i]){
-			aw += 1;
-			bw += 1;
-			p = 'D';
-		}
-		if(a[i] > b[i]){
-			aw += 3;
-			p = 'A';
-		}
-		if(a[i] < b[i]){
-			bw += 3;
-			p = 'B';
+	int map[101][101] = {0};
+	int n;
+	scanf("%d",&n);
+	for(int i = 0;i<n;i++){
+		int x,y;
+		scanf("%d %d",&x,&y);
+		for(int j = y;j<y+10;j++){
+			for(int k = x;k<x+10;k++){
+				map[j][k] = 1;
+			}
 		}
 	}
-	printf("%d %d",aw,bw);
-	printf("%c",p);
+	int ans = 0;
+	for(int i = 0;i<101;i++){
+		for(int j = 0;j<101;i++){
+			ans += map[i][j];
+		}
+	}
+	printf("%d",ans);
 	return 0;
 }

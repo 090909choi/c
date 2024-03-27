@@ -2,31 +2,29 @@
 
 int main()
 {
-	int n,m,a,b;
-	int map[100][100];
+	int n,m;
+	int map[101][101] = {0}; 
 	scanf("%d %d",&n,&m);
 	for(int i = 0;i<m;i++){
-		for(int j = 0;j<n;j++){
-			scanf("%d",&map[i][j]);
-			if(map[i][j] == 2)
+		int from,to,car;
+		scanf("%d %d %d",&from,&to,&car);
+		if(map[from-1][to-1] != 0)
+		{
+			if(car > map[from-1][to-1])
 			{
-				a = i;
-				b = j;
+				map[from-1][to-1] = car;
 			}
 		}
-	}
-	while(1){
-			if(map[a+1][b] == 1 && map[a][b+1] == 1)
+		else
 		{
-			printf("%d %d",a,b);
-			break;
+			map[from-1][to-1] = car;
 		}
-		else if(map[a+1][b] == 0){
-			a++;
+	}
+	for(int i = 0;i<n;i++){
+		for(int j = 0;j<n;j++){
+			printf("%d ",map[i][j]);
 		}
-		else if(map[a+1][b] == 1){
-			b++;
-		}
+		printf("\n");
 	}
 	return 0;
 }
