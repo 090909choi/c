@@ -2,35 +2,64 @@
 
 int main()
 {
-	int n,m;
-	int map[101][101] = {0}; 
+	int n,m,c,x,y,count = 0;
 	scanf("%d %d",&n,&m);
-	for(int i = 0;i<m;i++){
-		int from,to,car;
-		scanf("%d %d %d",&from,&to,&car);
-		if(map[from-1][to-1] != 0)
-		{
-			if(car > map[from-1][to-1])
+	int arr[100][100] = {0,};
+	scanf("%d",&c);
+	for(int i = 1;i<=c;i++){
+		scanf("%d %d",&x,&y);
+		arr[y][x] = -1;
+	}
+	for(int i = 1;i<=m;i++){
+		for(int j = 1;j<=n;j++){
+			if(arr[i][j-1] == -1)
 			{
-				map[from-1][to-1] = car;
-				map[from-1][from-1] += car*-1;
+				count += 1;
 			}
-		}
-		else
-		{
-			map[from-1][to-1] = car;
-			map[from-1][from-1] += car*-1;
+			if(arr[i+1][j-1] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i-1][j] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i][j+1] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i+1][j-1] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i-1][j-1] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i-1][j+1] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i+1][j+1] == -1)
+			{
+				count += 1;
+			}
+			if(arr[i][j] == -1)
+			{
+				arr[i][j] = -1;
+			}
+			else
+			{
+				arr[i][j] = count;
+			}
+			count = 0;
 		}
 	}
-	for(int i = 0; i<n;i++){
-		int k = 0;
-		for(int j = 0; j<n;j++){
-			k += map[j][i];
+	for(int i = 1;i<=m;i++){
+		for(int j = 1;j<=n;j++){
+			printf("%d ",arr[i][j]);
 		}
-		if(k > 0)
-		{
-			printf("%d",i+1);
-		}
+		printf("\n");
 	}
 	return 0;
 }

@@ -2,24 +2,31 @@
 
 int main()
 {
-	int map[101][101] = {0};
-	int n;
-	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		int x,y;
-		scanf("%d %d",&x,&y);
-		for(int j = y;j<y+10;j++){
-			for(int k = x;k<x+10;k++){
-				map[j][k] = 1;
+	int n,m,sum = 0,sum1 = 0;
+	scanf("%d %d",&n,&m);
+	int ar[m][n] = {0,};
+	
+	for(int i = 0;i<m;i++){
+		for(int j = 0;j<n;j++){
+			scanf("%d",&ar[i][j]);
+		}
+	}
+	
+	for(int i = 0;i<m;i++){
+		sum = 0;
+		for(int j = 0;j<n;j++){
+			sum += ar[i][j];
+			sum += ar[i-1][j];
+			sum += ar[i+1][j];
+			sum += ar[i][j-1];
+			sum += ar[i][j+1];
+			if(sum1 < sum)
+			{
+				sum1 = sum;
 			}
+			sum = 0;
 		}
 	}
-	int ans = 0;
-	for(int i = 0;i<101;i++){
-		for(int j = 0;j<101;i++){
-			ans += map[i][j];
-		}
-	}
-	printf("%d",ans);
+	printf("%d",sum1);
 	return 0;
 }
