@@ -2,22 +2,27 @@
 
 int main()
 {
-	int n,m;
-	int fr[100][100];
-	scanf("%d %d",&n,&m);
-	for(int i = 0;i<m;i++){
-		int from,to;
-		scanf("%d %d",&from,&to);
-		fr[from-1][to-1] = 1;
+	int T,A,B,C;
+	scanf("%d",&T);
+	if(T<60){
+		C = T/10;
 	}
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			if(fr[i][j] == 1)
-			{
-				printf("%d",j+1);
-			}
-		}
-		printf("\n");
+	else if(T<300){
+		B = T/60;
+		C = T%60/10;
+	}
+	else if(T<=10000){
+		A = T/300;
+		B = T%300/60;
+		C = T%60/10;
+	}
+	if(T%10 == 0)
+	{
+		printf("%d %d %d",A,B,C);
+	}
+	else
+	{
+		printf("-1");
 	}
 	return 0;
 }
