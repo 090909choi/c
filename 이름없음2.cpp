@@ -1,19 +1,16 @@
 #include<stdio.h>
 
-int Sum(int n);
+int Hanoi(int n,int from,int to)
+{
+	if(n == 0)return 0;
+	Hanoi(n-1,from,6-from-to);
+	printf("%d %d %d",n,from,to);
+	Hanoi(n-1,6-from-to,to);
+}
 
 int main()
 {
 	int n;
 	scanf("%d",&n);
-	printf("%d",Sum(n));
-}
-
-int Sum(int n)
-{
-	int sum = 0;
-	for(int i = 1;i<=n;i++){
-		sum += i;
-	}
-	return sum;
+	Hanoi(n,1,3);
 }

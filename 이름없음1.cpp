@@ -1,17 +1,15 @@
 #include<stdio.h>
 
-int plus(int num1,int num2)
+int Co(int n)
 {
-	return num1 + num2;
+	if(n == 1) return 0;
+	if(n%2==0) return 1 + Co(n/2);
+	else return 1 + Co(n*3+1);
 }
 
 int main()
 {
-	int a = 3;
-	int b = 5;
-	int num1 = plus(a,b);
-	printf("%d\n",num1);
-	
-	num1 = plus(3,5);
-	printf("%d\n",num1);
+	int n;
+	scanf("%d",&n);
+	printf("%d",Co(n));
 }
