@@ -1,33 +1,19 @@
 #include<stdio.h>
 
+int Factory(int n);
+
 int main()
 {
-	int arr[80];
-	int ar[80];
-	int count = 0;
-	for(int i = 0;i<10;i++){
-		scanf("%d",&arr[i]);
+	int n;
+	scanf("%d",&n);
+	printf("%d",Factory(n));
+}
+
+int Factory(int n)
+{
+	int sum = 1;
+	for(int i = n;i>0;i--){
+		sum *= i;
 	}
-	for(int j = 0;j<10;j++){
-		scanf("%d",&ar[j]);
-	}
-	for(int n = 0;n<10;n++){
-		if(arr[n]>ar[n])
-		{
-			count++;
-		}
-	}
-	if(count>5)
-	{
-		printf("A");
-	}
-	if(count=5)
-	{
-		printf("D");
-	}
-	if(count<5)
-	{
-		printf("B");
-	}
-	return 0;
+	return sum;
 }

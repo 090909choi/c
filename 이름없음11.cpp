@@ -1,16 +1,14 @@
 #include<stdio.h>
 
+int Sum(int n)
+{
+	if(n == 0) return n;
+	else return n%10 + Sum(n/10);
+}
+
 int main()
 {
-	for(int i = 1000;i<10000;i++)
-	{
-		if(i/1000 == i%10)
-		{
-			if((i%100-1%10)/10 == (i%1000-i%100)/100)
-			{
-				printf("%d  ",i);
-			}
-		}
-	}
-	return 0;
+	int n;
+	scanf("%d",&n);
+	printf("%d",Sum(n));
 }

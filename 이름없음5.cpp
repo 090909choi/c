@@ -1,23 +1,22 @@
 #include<stdio.h>
 
+int Divisor(int n);
+
 int main()
 {
-	int n,m;
-	int good[100][100];
-	scanf("%d %d",&n,&m);
-	for(int i = 0;i<m;i++){
-		int from,to;
-		scanf("%d %d",&from,&to);
-		good[from-1][to-1] = 1;
+	int n;
+	scanf("%d",&n);
+	printf("%d",Divisor(n));
+}
+
+int Divisor(int n)
+{
+	int sum;
+	while(n>0)
+	{
+		sum*=10;
+		sum += n%10;
+		n /= 10;
 	}
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			if(good[i][j] == good[j][i] && good[j][i] == 1)
-			{
-				printf("%d ",j+1);
-			}
-		}
-		printf("\n");
-	}
-	return 0;
+	return sum;
 }

@@ -1,28 +1,22 @@
 #include<stdio.h>
 
+int Divisor(int n);
+
 int main()
 {
-	int T,A,B,C;
-	scanf("%d",&T);
-	if(T<60){
-		C = T/10;
+	int n;
+	scanf("%d",&n);
+	Divisor(n);
+}
+
+int Divisor(int n)
+{
+	int sum = 0;
+	for(int i = 1;i<=n;i++){
+		if(n%i==0)
+		{
+			sum += 1;
+		}
 	}
-	else if(T<300){
-		B = T/60;
-		C = T%60/10;
-	}
-	else if(T<=10000){
-		A = T/300;
-		B = T%300/60;
-		C = T%60/10;
-	}
-	if(T%10 == 0)
-	{
-		printf("%d %d %d",A,B,C);
-	}
-	else
-	{
-		printf("-1");
-	}
-	return 0;
+	printf("%d",sum);
 }

@@ -1,19 +1,19 @@
 #include<stdio.h>
 
+int Sum(int n);
+
 int main()
 {
-	int n,h[100] = {0,},c,count = 0;
+	int n;
 	scanf("%d",&n);
+	printf("%d",Sum(n));
+}
+
+int Sum(int n)
+{
+	int sum = 0;
 	for(int i = 1;i<=n;i++){
-		scanf("%d",&h[c]);
-		c++;
+		sum += i;
 	}
-	for(int i = 1;i<=n;i++){
-		if(h[i] > h[i+1]  && h[i] > h[i-1])
-		{
-			count += 1;
-		}
-	}
-	printf("%d",count);
-	return 0;
+	return sum;
 }

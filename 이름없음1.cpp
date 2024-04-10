@@ -1,20 +1,17 @@
 #include<stdio.h>
 
+int plus(int num1,int num2)
+{
+	return num1 + num2;
+}
+
 int main()
 {
-	int n,t,k,ar[100][100],tx,ty,kx,ky;
-	scanf("%d",&n);
-	scanf("%d %d",&t,&k);
-	for(int i = 0;i<t;i++){
-		scanf("%d %d",&tx,&ty);
-		ar[ty][tx] = -1;
-	}
-	for(int i = 0;i<k;i++){
-		scanf("%d %d",&kx,&ky);
-		if(ar[ky][kx] == -1)
-		{
-			printf("%d",i+1);
-		}
-	}
-	return 0;
+	int a = 3;
+	int b = 5;
+	int num1 = plus(a,b);
+	printf("%d\n",num1);
+	
+	num1 = plus(3,5);
+	printf("%d\n",num1);
 }
