@@ -1,16 +1,16 @@
 #include<stdio.h>
 
-int Factory(int n);
-
-int main()
-{
-	int n;
-	scanf("%d",&n);
-	printf("%d",Factory(n));
-}
-
-int Factory(int n)
-{
-	if(n==1)return 1;
-	else return n*Factory(n-1);
+int main(){
+	char str[1000];
+	int sum = 1,count[26] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,};
+	scanf("%s",&str);
+	for(int i = 0;str[i];i++){
+		str[i] = str[i] - 'a';
+		count[str[i]] += sum;
+		sum++;
+	}
+	for(int i = 0;i<26;i++){
+		printf("%d ",count[i]);
+	}
+	return 0;
 }

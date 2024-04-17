@@ -1,24 +1,13 @@
 #include<stdio.h>
 
-int tr(int n,int k)
-{
-	int pa[30][n];
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<30;j++){
-			pa[j][i] = 1;
+int main(){
+	char str[1000];
+	scanf("%s",str);
+	for(int i = 0;i<str;i++){
+		if('a' <= str && str <= z){
+			str[i] = str[i] - 'a' + 'A'
 		}
 	}
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<30;j++){
-			printf("%d",pa[j][i]);
-		}
-		printf("\n");
-	}
-}
-
-int main()
-{
-	int n,k;
-	scanf("%d %d",&n,&k);
-	printf("%d",tr(n,k));
+	printf("%d",str);
+	return 0;
 }

@@ -1,22 +1,18 @@
 #include<stdio.h>
 
-int Divisor(int n);
-
-int main()
-{
-	int n;
-	scanf("%d",&n);
-	Divisor(n);
-}
-
-int Divisor(int n)
-{
-	if(n > 0)
-	{
-		printf("%d",n);
+int main(){
+	char str[1000];
+	int count[26] = {0,};
+	scanf("%s",str);
+	for(int i = 0;str[i];i++){
+		if('a' <= str[i] && str[i] <= 'z')
+		{
+			str[i] = str[i] - 'a' + 'A';
+		}
+		count[str[i]-'A']++;
 	}
-	else if(n < 0)
-	{
-		printf("%d",n*-1);
+	for(int i = 0;i<26;i++){
+		printf("%d ",count[i]);
 	}
+	return 0;
 }

@@ -1,22 +1,13 @@
 #include<stdio.h>
 
-int Divisor(int n);
-
-int main()
-{
-	int n;
-	scanf("%d",&n);
-	printf("%d",Divisor(n));
-}
-
-int Divisor(int n)
-{
-	int sum;
-	while(n>0)
-	{
-		sum*=10;
-		sum += n%10;
-		n /= 10;
+int main(){
+	char str[1000];
+	scanf("%[^\n]",str);
+	for(int i = 0;str[i];i++){
+		if('A' <= str[i] && str[i] <= 'Z'){
+			str[i] = str[i] + 32; 
+		}
 	}
-	return sum;
+	printf("%s",str);
+	return 0;
 }

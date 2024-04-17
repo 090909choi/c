@@ -2,18 +2,22 @@
 
 int main()
 {
-	int day,count;
-	int car[80];
-	scanf("%d",&day);
-	for(int i = 0;i<5;i++){
-		scanf("%d",&car[i]);
-	}
-	for(int i = 0;i<5;i++){
-		if(car[i] == day)
+	int l,d,sum = 0;
+	char s[10000],s2[10000];
+	scanf("%d %d",&l,&d);
+	scanf("%s",s);
+	for(int i = 0;s[i]-1;i++){
+		if(d>l-1)
 		{
-			count++;
+			s2[d-l] = s[i+1];
 		}
+		else
+		{
+			s2[d] = s[i+1];
+		}
+		d *= 2;
 	}
-	printf("%d",count);
+	s2[0] = s[0];
+	printf("%s",s2);
 	return 0;
 }

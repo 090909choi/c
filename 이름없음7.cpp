@@ -1,19 +1,12 @@
 #include<stdio.h>
 
-int Factory(int n);
-
-int main()
-{
+int main(){
+	char str[1000];
 	int n;
-	scanf("%d",&n);
-	printf("%d",Factory(n));
-}
-
-int Factory(int n)
-{
-	int sum = 1;
-	for(int i = n;i>0;i--){
-		sum *= i;
+	scanf("%d %s",&n,str);
+	for(int i = 0;str[i];i++){
+		str[i] = str[i] + n;
+		printf("%c",str[i]);
 	}
-	return sum;
+	return 0;
 }
