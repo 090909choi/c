@@ -1,13 +1,9 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 
 int main(){
-	char str[1000];
-	scanf("%s",str);
-	for(int i = 0;i<str;i++){
-		if('a' <= str && str <= z){
-			str[i] = str[i] - 'a' + 'A'
-		}
-	}
-	printf("%d",str);
-	return 0;
+	string s;
+//	scanf("%s",s);
+	cin >> s;
+	cout << "노란색" << s << "는 맛있다 ";
 }

@@ -1,16 +1,35 @@
-#include<stdio.h>
+#include<iostream>
+#include<string>
+using namespace std;
 
-int main(){
-	char str[1000];
-	int sum = 1,count[26] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,};
-	scanf("%s",&str);
-	for(int i = 0;str[i];i++){
-		str[i] = str[i] - 'a';
-		count[str[i]] += sum;
-		sum++;
-	}
-	for(int i = 0;i<26;i++){
-		printf("%d ",count[i]);
+int main()
+{
+	int a,len1,len2;
+	string n;
+	cin >> n;
+	string bo;
+	cin >> bo;
+	len1 = bo.size();
+	len2 = n.size();
+	while(1)
+	{
+		a = n.find(bo);
+
+		if(a < 0)
+		{
+			cout << n;
+			break;
+		}
+		else
+		{
+			n = n.substr(0,a)+n.substr(a+len1,len2);
+		}
+		if(a == 0)
+		{
+			cout << "Art!";
+			break;
+		}
+		
 	}
 	return 0;
 }

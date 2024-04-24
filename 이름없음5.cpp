@@ -1,13 +1,29 @@
-#include<stdio.h>
-
-int main(){
-	char str[1000];
-	scanf("%[^\n]",str);
-	for(int i = 0;str[i];i++){
-		if('A' <= str[i] && str[i] <= 'Z'){
-			str[i] = str[i] + 32; 
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string n;
+	string c;
+	int a,check = 0;
+	
+	cin >> c;
+	cin >> a;
+	
+	for(int i = 0;i<a;i++){
+		cin >> n;
+		if(c == n)
+		{
+			check = 1;
 		}
 	}
-	printf("%s",str);
+	if(check == 1)
+	{
+		cout << "Yes";
+	}
+	else
+	{
+		cout << "No";
+	}
 	return 0;
-}
+} 

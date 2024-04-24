@@ -1,12 +1,17 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 
-int main(){
-	char str[1000];
-	int n;
-	scanf("%d %s",&n,str);
-	for(int i = 0;str[i];i++){
-		str[i] = str[i] + n;
-		printf("%c",str[i]);
+int main()
+{
+	string n,m;
+	cin >> n;
+	cin >> m;
+	if(n.size() > m.size()) cout << n;
+	else if(n.size() < m.size()) cout << m;
+	else if(n.size() == m.size())
+	{
+		if(n > m) cout << n;
+		else cout << m;
 	}
 	return 0;
 }

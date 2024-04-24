@@ -1,18 +1,29 @@
 #include<stdio.h>
+#include<string.h> 
 
-int main(){
-	char str[1000];
-	int count[26] = {0,};
-	scanf("%s",str);
-	for(int i = 0;str[i];i++){
-		if('a' <= str[i] && str[i] <= 'z')
-		{
-			str[i] = str[i] - 'a' + 'A';
+int main()
+{
+	int a,b;
+	char s[10001];
+	scanf("%d",&a);
+	int check = 0;
+	for(int i = 0;i<a;i++){
+		scanf("%s",s);
+		int len = strlen(s);
+		for(int j = 0;j<len/2;j++){
+		if(s[j] == s[len-1-j]){
+			b = 1;
 		}
-		count[str[i]-'A']++;
+		else
+		{
+			b = 0;
+		}
 	}
-	for(int i = 0;i<26;i++){
-		printf("%d ",count[i]);
+	if(b == 1)
+		{
+			check += 1;
+		}
 	}
+	printf("%d",check);
 	return 0;
 }
