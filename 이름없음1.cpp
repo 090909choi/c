@@ -1,32 +1,20 @@
 #include<stdio.h>
+#include<iostream>
 #include<string.h>
+using namespace std;
 
 int main()
 {
-	char a[10000],b[10000];
-	scanf("%s %s",a,b);
-	if(strlen(a) > strlen(b))
-	{
-		printf("sir");
-	}
-	else if(strlen(a) < strlen(b))
-	{
-		printf("kid");
-	}
-	else if(strlen(a) == strlen(b))
-	{
-		for(int i = 0;i<strlen(a);i++){
-			if(a[i] < b[i])
-			{
-				printf("kid");
-				break;
-			}
-			else if(a[i] > b[i])
-			{
-				printf("sir");
-				break;
-			}
+	string b;
+	string a;
+	int count = 0;
+	cin >> a;
+	cin >> b;
+	for(int i = 0;i<=a.size() - b.size();i++){
+		if(a.substr(i,b.size()) == b){
+			count++;
 		}
 	}
+	printf("%d",count);
 	return 0;
 }

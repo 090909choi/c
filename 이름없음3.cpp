@@ -1,23 +1,19 @@
 #include<stdio.h>
-#include<string.h> 
 
 int main()
 {
-	char a[1000];
-	scanf("%s",a);
-	int check = 0;
-	int len = strlen(a);
-	for(int i = 0;i<len/2;i++){
-		if(a[i] != a[len-1-i]){
-			check = 1;
+	int a,b,c,out = 0,i = 1;
+	while(1)
+	{
+		scanf("%d %d %d",&a,&b,&c);
+		if(a == 0 && b == 0 && c == 0)
+		{
 			break;
 		}
-		
-	}
-	if(check == 0){
-		printf(" Yes ");
-	}
-	else{
-		printf(" N0 ");
+		out += (c/b)*a;
+		out += c%b;
+		printf("case%d : %d",i,out);
+		i++;
+		out = 0;
 	}
 }

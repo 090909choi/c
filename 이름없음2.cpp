@@ -2,41 +2,21 @@
 
 int main()
 {
-	int n,m;
-	char c;
+	int n,count = 0;
 	scanf("%d",&n);
-	for(int i = 0;i<n;i++)
-	{
-		scanf("%d %c",&m,&c);
-		if(i == n-1)
-		{
-			scanf("%d",&n);
-			if('a' <= c && c <= 'z')
-			{
-				if(m -c+'a'-1 < 1)
-				{
-					printf("1");
-				}
-				else
-				{
-					printf("%d",m -c+'a'-1);
-				}
-				break;
-			}
-			else
-			{
-				if(m + c-'A'+1 > 50)
-				{
-					printf("50");
-				}
-				else
-				{
-					printf("%d",m + c-'A'+1);
-				}
-				break;
-			}
-		}
-		
-	}
+	n = 1000-n;
+	count += n/500;
+	n %= 500;
+	count += n/100;
+	n %= 100;
+	count += n/50;
+	n %= 50;
+	count += n/10;
+	n %= 10;
+	count += n/5;
+	n %= 5;
+	count += n/1;
+	n %= 1;
+	printf("%d",count);
 	return 0;
 }
