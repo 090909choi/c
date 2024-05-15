@@ -1,19 +1,23 @@
 #include<stdio.h>
+#include<iostream>
+#include<utility>
+using namespace std;
 
-int main()
-{
-	int a,b,c,out = 0,i = 1;
-	while(1)
-	{
-		scanf("%d %d %d",&a,&b,&c);
-		if(a == 0 && b == 0 && c == 0)
-		{
-			break;
-		}
-		out += (c/b)*a;
-		out += c%b;
-		printf("case%d : %d",i,out);
-		i++;
-		out = 0;
+int main(){
+	pair<int,int> score[10001];
+	pair<int,int> max;
+	int n,t,s,result;
+	cin >> n;
+	for(int i = 0;i<n;i++){
+		cin >> t >> s;
+		score[i] = make_pair(t,s);
 	}
+	for(int i = 0;i<n;i++){
+		if(max < score[i]){
+			max = score[i];
+			result = i;
+		}
+	}
+	printf("%d",result+1);
+	return 0;
 }
