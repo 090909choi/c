@@ -1,23 +1,30 @@
 #include<stdio.h>
+#include<vector>
 #include<iostream>
-#include<utility>
 using namespace std;
 
-int main(){
-	pair<int,int> score[10001];
-	pair<int,int> max;
-	int n,t,s,result;
-	cin >> n;
+struct library{
+	string s;
+	int g;
+	int u;
+};
+
+int main()
+{
+	int n;
+	string w;
+	library p[10001];
+	scanf("%d",&n);
 	for(int i = 0;i<n;i++){
-		cin >> t >> s;
-		score[i] = make_pair(t,s);
+		cin >> p[i].s;
+		scanf("%d %d",&p[i].g,&p[i].u);
 	}
+	cin >> w;
 	for(int i = 0;i<n;i++){
-		if(max < score[i]){
-			max = score[i];
-			result = i;
+		if(w == p[i].s)
+		{
+			printf("%d %d",p[i].g,p[i].u);
 		}
 	}
-	printf("%d",result+1);
 	return 0;
 }
