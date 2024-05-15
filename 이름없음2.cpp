@@ -1,33 +1,30 @@
 #include<stdio.h>
-#include<iostream>
 #include<vector>
-
-struct student{
-	int id;
-	char name[10001];
-	int sum1;
-	int sum2;
-};
+#include<iostream>
+using namespace std;
 
 int main()
 {
-	student p[10000];
-	char name[10001];
-	int n,a,id,sum1,sum2;
-	char nam[10001];
+	int n;
+	pair<int,double> p[10001];
 	scanf("%d",&n);
 	for(int i = 0;i<n;i++){
-		scanf("%d %s %d %d",&p[i].id,p[i].name,&p[i].sum1,&p[i].sum2);
+		int m;
+		double a;
+		scanf("%d %lf",m,a);
+		p[i] = make_pair(m,a);
 	}
-	scanf("%d",&a);
-	for(int i = 0;i<a;i++){
-		scanf("%s",nam);
-		for(int j = 0;j<n;j++){
-			if(p[j].name == nam)
-			{
-				printf("%d %d %d",p[j].id,p[j].sum1,p[j].sum2);
-			}
-		}
+	int i,im;
+	double ia;
+	scanf("%d %d %lf",&i,&im,&ia);
+	p[i-1] = make_pair(im,ia);
+	double sum_a = 1;
+	int sum_m = 0;
+	for(int i = 0;i<n;i++){
+		sum_m += p[i].first;
+		sum_a *= p[i].second;
 	}
+	int f = sum_m * sum_a;
+	printf("%d",f);
 	return 0;
 }
