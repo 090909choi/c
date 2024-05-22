@@ -1,29 +1,34 @@
+#include<stdio.h>
+#include<queue>
+#include<stack>
 #include<iostream>
-#include<string>
 using namespace std;
 int main()
 {
-	string n;
-	string c;
-	int a,check = 0;
-	
-	cin >> c;
-	cin >> a;
-	
-	for(int i = 0;i<a;i++){
-		cin >> n;
-		if(c == n)
-		{
-			check = 1;
-		}
-	}
-	if(check == 1)
+	int n;
+	cin >> n;
+	if(n%10 == 1)
 	{
-		cout << "Yes";
+		n/=10;
+	}
+	if(n%2 == 0)
+	{
+		for(int i  = 1; i<100000000;i++)
+		{
+			n/=2;
+			if(n == 0)
+			{
+				cout << "1";
+				break;
+			}
+		}
+		if(n != 0)
+		{
+			cout << "-1";
+		}
 	}
 	else
 	{
-		cout << "No";
+		cout << "-1";
 	}
-	return 0;
-} 
+}

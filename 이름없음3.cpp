@@ -1,30 +1,22 @@
 #include<stdio.h>
-#include<vector>
+#include<queue>
+#include<stack>
 #include<iostream>
 using namespace std;
-
-struct library{
-	string s;
-	int g;
-	int u;
-};
-
 int main()
 {
-	int n;
-	string w;
-	library p[10001];
-	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		cin >> p[i].s;
-		scanf("%d %d",&p[i].g,&p[i].u);
+	queue<int> q;
+	int n,k,a= 0;
+	cin >> n >> k;
+	for(int i  = 1;i<=n;i++){
+		q.push(i);
 	}
-	cin >> w;
-	for(int i = 0;i<n;i++){
-		if(w == p[i].s)
-		{
-			printf("%d %d",p[i].g,p[i].u);
+	while(!q.empty()){
+		for(int i = 0;i<k-1;i++){
+			q.push(q.front());
+			q.pop();
 		}
+		cout << q.front() << " ";
+		q.pop();
 	}
-	return 0;
 }
