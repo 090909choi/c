@@ -2,22 +2,16 @@
 #include<algorithm>
 using namespace std;
 
-bool cmp(int left,int right){
-	return left > right;
-}
-int main(){
-	int data[10];
-	for(int i = 0;i<10;i++){
-		cin >> data[i];
+int main()
+{
+	int n,t[10001],all=0;
+	cin >> n;
+	for(int i = 1;i<=n;i++){
+		cin >> t[i];
 	}
-	sort(data,data+10);
-	for(int i = 0;i<10;i++){
-			cout << data[i];
-	}	
-	cout << "\n";
-	sort(data,data+10,cmp);
-	for(int i = 0;i<10;i++){
-		cout << data[i];
+	sort(t+1,t+n+1);
+	for(int i = 1;i<=n;i++){
+		all += t[i] * (n-1);
 	}
-	return 0;
+	cout << all;
 }

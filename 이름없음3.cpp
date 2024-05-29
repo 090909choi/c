@@ -2,22 +2,29 @@
 #include<algorithm>
 using namespace std;
 
-int main(){
-	double data1[10];
-	double data2[10];
-	int n,sum = 0;
+int main()
+{
+	int n,c[10001],m;
 	cin >> n;
 	for(int i = 0;i<n;i++){
-		cin >> data1[i];
-		data2[i] = data1[i];
+		cin >> c[i];
 	}
-	sort(data2,data2+n);
-	for(int i = 0;i<n;i++){
-			if(data1[i] != data2[i])
-			{
-				sum++;
-			}
+	cin >> m;
+	sort(c,c+n);
+	int left = 0,right = n - 1;
+	while(left < right){
+		if(c[left] + c[right] == m){
+			cout << c[left] << " " << c[right];
+			return 0;
+		}
+		else if(c[left] + c[right] < m)
+		{
+			left++;
+		}
+		else{
+			right--;
+		}
 	}
-	cout << sum;
+	printf("-1");
 	return 0;
 }
