@@ -1,32 +1,20 @@
-#include<stdio.h>
-#include<queue>
-#include<stack>
 #include<iostream>
+#include<algorithm>
 using namespace std;
-int main()
-{
-	queue<int> c;
-	int n,s,count = 0,max = 0;
+
+int main(){
+	int n,t,s;
+	pair<int,int> p[10001];
 	cin >> n;
-	for(int i = 0;i<n;i++){
-		cin >> s;
-		if(s > max)
-		{
-			for(int j = 0;j<i;j++){
-				c.pop();
-			}
-			c.push(s);
-			max = s;
-		}
-		else
-		{
-			c.push(s);
-		}
+	for(int i  = 0;i<n;i++){
+		cin >> t >> s;
+		p[i] = make_pair(t,s);
 	}
-	while(!c.empty())
+	sort(p,p+n);
+	for(int i = 0; i < n; i++)
 	{
-		c.pop();
-		count++;
+		cout << p[i].second << "  ";
+		if(p[i].first != p[i+1].first) cout << "\n";
 	}
-	cout << count;
+	return 0;
 }

@@ -1,22 +1,23 @@
-#include<stdio.h>
-#include<queue>
-#include<stack>
 #include<iostream>
+#include<algorithm>
 using namespace std;
-int main()
-{
-	queue<int> q;
-	int n,k,a= 0;
-	cin >> n >> k;
-	for(int i  = 1;i<=n;i++){
-		q.push(i);
+
+int main(){
+	double data1[10];
+	double data2[10];
+	int n,sum = 0;
+	cin >> n;
+	for(int i = 0;i<n;i++){
+		cin >> data1[i];
+		data2[i] = data1[i];
 	}
-	while(!q.empty()){
-		for(int i = 0;i<k-1;i++){
-			q.push(q.front());
-			q.pop();
-		}
-		cout << q.front() << " ";
-		q.pop();
+	sort(data2,data2+n);
+	for(int i = 0;i<n;i++){
+			if(data1[i] != data2[i])
+			{
+				sum++;
+			}
 	}
+	cout << sum;
+	return 0;
 }

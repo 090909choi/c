@@ -1,34 +1,23 @@
-#include<stdio.h>
-#include<stack>
-#include<queue>
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
-int main()
-{
-	int a,b;
-	cin >> a >> b;
-	queue<pair<int,int>> q;
-	q.push(make_pair(a,0));
-	while(!q.empty())
-	{
-		int num = q.front().first;
-		int count = q.front().second;
-		q.pop();
-		if(num == b)
-		{
-			cout >> count;
-			return 0;
-		}
-		if(num * 2 <= b)
-		{
-			q.push(make_pai(num*2,count+1));
-		}
-		if(num*10+1<=b)
-		{
-			q.push(make_pair(num*10+1,count+1));
-		}
+bool cmp(int left,int right){
+	return left > right;
+}
+int main(){
+	int data[10];
+	for(int i = 0;i<10;i++){
+		cin >> data[i];
 	}
-	cout >> "-1";
+	sort(data,data+10);
+	for(int i = 0;i<10;i++){
+			cout << data[i];
+	}	
+	cout << "\n";
+	sort(data,data+10,cmp);
+	for(int i = 0;i<10;i++){
+		cout << data[i];
+	}
 	return 0;
 }
