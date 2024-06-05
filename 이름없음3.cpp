@@ -1,30 +1,41 @@
-#include<iostream>
-#include<algorithm>
+#include<stdio.h>
+#include<queue>
 using namespace std;
 
-int main()
-{
-	int n,c[10001],m;
-	cin >> n;
-	for(int i = 0;i<n;i++){
-		cin >> c[i];
+int main(){
+	int a[11],b[11];
+	int sum = 0;
+	for(int i = 0;i<10;i++){
+		scanf("%d",&a[i]);
 	}
-	cin >> m;
-	sort(c,c+n);
-	int left = 0,right = n - 1;
-	while(left < right){
-		if(c[left] + c[right] == m){
-			cout << c[left] << " " << c[right];
-			return 0;
-		}
-		else if(c[left] + c[right] < m)
+	for(int i = 0;i<10;i++){
+		scanf("%d",&b[i]);
+	}
+	for(int i = 0;i<10;i++){
+		if(a[i] > b[i])
 		{
-			left++;
+			sum++;
 		}
-		else{
-			right--;
+		else if(a[i] < b[i])
+		{
+			sum--;
+		}
+		else
+		{
+			sum+=0;
 		}
 	}
-	printf("-1");
+	if(sum > 0)
+	{
+		printf("A");
+	}
+	else if(sum == 0)
+	{
+		printf("D");
+	}
+	else
+	{
+		printf("B");
+	}
 	return 0;
 }

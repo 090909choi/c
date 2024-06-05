@@ -1,29 +1,31 @@
 #include<iostream>
-#include<algorithm>
+#include<stack>
 using namespace std;
 
-int main()
-{
-	int n,s,e,all = 0,end;
-	pair<int,int> p[10001];
-	int p2[10001];
-	cin >> n;
-	for(int i = 0;i<n;i++){
-		cin >> s >> e;
-		p[i] = make_pair(s,e);
-	}
-	for(int i = 0;i<n;i++){
-		p2[i] = p[i].second - p[i].first;
-	}
-	sort(p2,p2+n);
-	for(int i = 0;i<n;i++){
-		if(all+p2[i] <= 24)
-		{
-			all += p2[i];
+int main(){
+	int t;
+	string s;
+	cin >> t;
+	stack<char> ps;
+	for(int i  = 0;i<t;i++){
+		cin >> s;
+		for(int j  = 0;s[j];j++){
+				if(ps.empty()){
+					ps.push(s[j]);
+				}
+				else if(ps.top() ==  '(' && s[j] == ')'){
+					ps.pop();
+				}
+				else{
+					ps.push(s[j]);
+				}
+		}
+		if(ps.empty()){
+			cout << "Yes";
 		}
 		else{
-			end = i-2;
+			cout << "No";
 		}
 	}
-	cout << end;
+	return 0;
 }

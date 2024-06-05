@@ -1,17 +1,30 @@
 #include<iostream>
-#include<algorithm>
+#include<queue>
 using namespace std;
 
-int main()
-{
-	int n,t[10001],all=0;
-	cin >> n;
+int main(){
+	queue<int> q;
+	int n,m;
+	cin >> n >> m;
 	for(int i = 1;i<=n;i++){
-		cin >> t[i];
+		q.push(i);
 	}
-	sort(t+1,t+n+1);
-	for(int i = 1;i<=n;i++){
-		all += t[i] * (n-1);
+	cout << "<";
+	while(q.size() > 1)
+	{
+		for(int i = 0;i<m-1;i++){
+			q.push(q.front());
+			q.pop();
+		}
+		cout << q.front() << ", ";
+		
+		q.pop();
 	}
-	cout << all;
+	for(int i = 0;i<m-1;i++){
+		q.push(q.front());
+		q.pop();
+	}
+	cout << q.front();
+	cout << ">";
+	return 0;
 }
