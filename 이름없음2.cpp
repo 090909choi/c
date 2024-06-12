@@ -1,30 +1,35 @@
 #include<iostream>
-#include<queue>
+#include<stack>
+#include<algorithm>
 using namespace std;
 
-int main(){
-	queue<int> q;
-	int n,m;
-	cin >> n >> m;
-	for(int i = 1;i<=n;i++){
-		q.push(i);
-	}
-	cout << "<";
-	while(q.size() > 1)
-	{
-		for(int i = 0;i<m-1;i++){
-			q.push(q.front());
-			q.pop();
+int main()
+{
+	int a,h;
+	stack<pair<int,int> > t;
+	cin >> a;
+	for(int i = 1;i<=a;i++){
+		cin >> h;
+		if(t.empty()){
+			t.push({i,h});
+			cout << "0 ";
 		}
-		cout << q.front() << ", ";
-		
-		q.pop();
+		else
+		{
+			while(!t.empty()){
+				if(t.top().second<h){
+					t.pop();
+				}
+				else{
+					cout << t.top().first << " ";
+					break;
+				}
+			}
+			if(t.empty()){
+				cout << "0 ";
+			}
+			t.push({i,h});
+		}
 	}
-	for(int i = 0;i<m-1;i++){
-		q.push(q.front());
-		q.pop();
-	}
-	cout << q.front();
-	cout << ">";
 	return 0;
 }

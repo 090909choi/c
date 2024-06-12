@@ -2,30 +2,32 @@
 #include<stack>
 using namespace std;
 
-int main(){
-	int t;
-	string s;
-	cin >> t;
-	stack<char> ps;
-	for(int i  = 0;i<t;i++){
-		cin >> s;
-		for(int j  = 0;s[j];j++){
-				if(ps.empty()){
-					ps.push(s[j]);
-				}
-				else if(ps.top() ==  '(' && s[j] == ')'){
-					ps.pop();
-				}
-				else{
-					ps.push(s[j]);
-				}
-		}
-		if(ps.empty()){
-			cout << "Yes";
+int main()
+{
+	string n;
+	cin >> n;
+	stack<int> q;
+	int sum = 0;
+	for(int i = 0;n[i];i++){
+		if(q.empty())
+		{
+			q.push(n[i]);
 		}
 		else{
-			cout << "No";
+			if(n[i] == '('){
+				q.push(n[i]);
+			}
+			else if(n[i-1] == '('){
+				q.pop();
+				sum += q.size();
+			}
+			else
+			{
+				q.pop();
+				sum++;
+			}
 		}
 	}
+	cout << sum;
 	return 0;
 }
