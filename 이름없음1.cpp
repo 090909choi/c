@@ -4,30 +4,21 @@ using namespace std;
 
 int main()
 {
-	string n;
-	cin >> n;
+	int n,k,sum = 0;
 	stack<int> q;
-	int sum = 0;
-	for(int i = 0;n[i];i++){
-		if(q.empty())
+	cin >> n;
+	for(int i  = 0;i<n;i++){
+		cin >> k;
+		q.push(k);
+		if(q.top() == 0)
 		{
-			q.push(n[i]);
-		}
-		else{
-			if(n[i] == '('){
-				q.push(n[i]);
-			}
-			else if(n[i-1] == '('){
-				q.pop();
-				sum += q.size();
-			}
-			else
-			{
-				q.pop();
-				sum++;
-			}
+			q.pop();
+			q.pop();
 		}
 	}
+	while(!q.empty()){
+		sum += q.top();
+		q.pop();
+	}
 	cout << sum;
-	return 0;
 }
