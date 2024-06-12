@@ -1,24 +1,25 @@
 #include<iostream>
-#include<stack>
+#include<queue>
 using namespace std;
 
 int main()
 {
-	int n,k,sum = 0;
-	stack<int> q;
-	cin >> n;
-	for(int i  = 0;i<n;i++){
-		cin >> k;
-		q.push(k);
-		if(q.top() == 0)
-		{
-			q.pop();
-			q.pop();
-		}
-	}
+	int a,b;
+	cin >> a >> b;
+	queue<pair<int,int> > q;
+	q.push(make_pair(a,0));
 	while(!q.empty()){
-		sum += q.top();
+		int num = q.front().first;
+		int count = q.front().second;
 		q.pop();
-	}
-	cout << sum;
+		if(num == b)
+		{
+			cout << count;
+			return 0;
+		}
+		if(num * 2 <= b) q.push(make_pair(num*2,count+1));
+		if(num*10 +1 <=b)q.push(make_pair(num*10+1,count+1));
+	} 
+	cout << "-1";
+	return 0;
 }
