@@ -1,20 +1,19 @@
-#include<iostream>
+#include<stdio.h>
 #include<algorithm>
+#include<vector>
 using namespace std;
 
-int main(){
-	int n,t,s;
-	pair<int,int> p[10001];
-	cin >> n;
-	for(int i  = 0;i<n;i++){
-		cin >> t >> s;
-		p[i] = make_pair(t,s);
+int main()
+{
+	int n;
+	int k;
+	vector<int> v;
+	scanf("%d %d",&n,&k);
+	for(int i = 0;i<n;i++){
+		int temp;
+		scanf("%d",&temp);
+		v.push_back(temp);
 	}
-	sort(p,p+n);
-	for(int i = 0; i < n; i++)
-	{
-		cout << p[i].second << "  ";
-		if(p[i].first != p[i+1].first) cout << "\n";
-	}
-	return 0;
+	sort(v.begin(),v.end());
+	printf("%d",v[k-1]);
 }

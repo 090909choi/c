@@ -1,41 +1,34 @@
-#include<stdio.h>
-#include<queue>
+#include<iostream>
+#include<algorithm>
+#include<vector>
 using namespace std;
 
-int main(){
-	int a[11],b[11];
-	int sum = 0;
-	for(int i = 0;i<10;i++){
-		scanf("%d",&a[i]);
+int main()
+{
+	int n;
+	int cnt = 1,max = 0,ans;
+	vector<int> v;
+	cin >> n;
+	for(int i = 0;i<n;i++){
+		int temp;
+		cin >> temp;
+		v.push_back(temp);
 	}
-	for(int i = 0;i<10;i++){
-		scanf("%d",&b[i]);
-	}
-	for(int i = 0;i<10;i++){
-		if(a[i] > b[i])
+	sort(v.begin(),v.end());
+	for(int i = 0;i<n;i++){
+		if(v[i] == v[i+1])
 		{
-			sum++;
-		}
-		else if(a[i] < b[i])
-		{
-			sum--;
+			cnt++;
 		}
 		else
 		{
-			sum+=0;
+			cnt = 0;
+		}
+		if(cnt > max){
+			max = cnt;
+			ans = v[i];
 		}
 	}
-	if(sum > 0)
-	{
-		printf("A");
-	}
-	else if(sum == 0)
-	{
-		printf("D");
-	}
-	else
-	{
-		printf("B");
-	}
+	cout << ans;
 	return 0;
 }
