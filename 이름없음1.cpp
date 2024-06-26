@@ -1,48 +1,36 @@
-#include<iostream>
-#include<stack>
+#include<stdio.h>
+#include<algorithm>
 using namespace std;
 
-int main()
-{
-	string ccc;
-	int ans = 0;
-	int temp = 0;
-	stack<char> s;
-	cin >> ccc;
-	for(int i = 0;ccc[i];i++){
-		if(ccc[i] == '('){
-			if(ccc[i-1] == ')'){
-			ans += temp;
-			temp /= 2;
-			s.pop();
-			}
+struct Asia{
+	int country;
+	int num;
+	int score;
+};
+
+bool cmp(const Asia left,const Asia right){
+	return left.score > right.score;	
+}
+
+int main(){
+	Asia stud[101];
+	int n,check = 0;
+	scanf("%d",&n);
+	for(int i = 0;i<n;i++){
+		scanf("%d %d %d",&stud[i].country,&stud[i].num,&stud[i].score);
+	}
+	sort(stud,stud+n,cmp);
+	int cnt_contry[101] = {0,};
+	for(int i = 0;i<n;i++){
+		if(cnt_contry[stud[i].country] >= 2){
+			continue;
 		}
-		else if(ccc[i] == '['){
-			if(ccc[i-1] == ']' ){
-				temp/=2;
-				s.pop();
-			}
-		}
-		if(ccc[i-1] == '('){
-			ans += temp;
-			temp /= 2;
-			s.pop();
-		}
+		cnt_contry[stud[i].country]++;
 		
-		if(ccc[i-1] == '[' ){
-			temp/=3;
-			s.pop();
-		}
-		if(ccc[i-1] == ')'){
-			ans += temp;
-			temp /= 2;
-			s.pop();
-		}
-		
-		if(ccc[i-1] == ']' ){
-			temp/=3;
-			s.pop();
+		printf("%d %d",stud[i].country,stud[i].num);
+		check++;
+		if(check>=3){
+			break;
 		}
 	}
-		
 }

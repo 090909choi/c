@@ -1,34 +1,44 @@
-#include<iostream>
+#include<stdio.h>
 #include<algorithm>
-#include<vector>
+#include<string.h>
 using namespace std;
+
+struct Score{
+	char name[10];
+	int k;
+	int y;
+	int s;
+};
+
+bool cmp(const Score u,const Score v){
+	if(u.k > v.k){
+		return true;
+	}
+	else if(u.k == v.k){
+		if(u.y < v.y){
+			return true;
+		}
+		else if(u.y == v.y){
+			if(u.s > v.s){
+				return true;
+			}
+			else if(u.s == v.s){
+				return strcmp(u.name,v.name) <= 0;
+			}
+		}
+	}
+}
 
 int main()
 {
 	int n;
-	int cnt = 1,max = 0,ans;
-	vector<int> v;
-	cin >> n;
+	Score a[10001];
+	scanf("%d",&n);
 	for(int i = 0;i<n;i++){
-		int temp;
-		cin >> temp;
-		v.push_back(temp);
+		scanf("%s %d %d %d",a[i].name,&a[i].k,&a[i].y,&a[i].s);
 	}
-	sort(v.begin(),v.end());
+	sort(a,a+n,cmp);
 	for(int i = 0;i<n;i++){
-		if(v[i] == v[i+1])
-		{
-			cnt++;
-		}
-		else
-		{
-			cnt = 0;
-		}
-		if(cnt > max){
-			max = cnt;
-			ans = v[i];
-		}
+		printf("%s\n",a[i].name);
 	}
-	cout << ans;
-	return 0;
 }
