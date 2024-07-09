@@ -1,26 +1,29 @@
 #include<stdio.h>
-#include<algorithm>
-using namespace std;
+int d[5001] = {0,};
 
-const int m = 100100;
-int n,x[m],y[m],X,Y;
-int s;
+int dp(int x){
 	
-	int main(){
-	int i;
-	scanf("%d %d",&n,&m);
-	for(i = 0;i<m;i++){
-		scanf("%d %d",&x[i],&y[i]);
-	}
-	sort(x,x+m);
-	sort(y,y+m);
-	X = x[m/2];
-	Y = y[m/2];
+}
+
+int main(){
+	int n;
+	d[3] = 1;
+	d[5] = 1;
+	scanf("%d",&n);
 	
-	s = 0;
-	for(i = 0;i<m;++i){
-		s+=abs(X-x[i])+ abs(Y - y[i]);
+	for(int i = 6;i<=n;i++){
+		if(d[i-3]){
+			d[i] = d[i-3] + 1;
+		}
+		if(d[i-5]){
+			d[i] = d[i-5] + 1;
+		}
+	}	
+	
+	if(d[n]){
+		printf("%d",d[n]);
 	}
-	printf("%d",&s);
-	return 0;
+	else{
+		printf("-1");
+	}
 }

@@ -1,44 +1,18 @@
 #include<stdio.h>
-#include<algorithm>
-#include<string.h>
-using namespace std;
+int d[5001] = {0,};
 
-struct Score{
-	char name[10];
-	int k;
-	int y;
-	int s;
-};
-
-bool cmp(const Score u,const Score v){
-	if(u.k > v.k){
-		return true;
-	}
-	else if(u.k == v.k){
-		if(u.y < v.y){
-			return true;
-		}
-		else if(u.y == v.y){
-			if(u.s > v.s){
-				return true;
-			}
-			else if(u.s == v.s){
-				return strcmp(u.name,v.name) <= 0;
-			}
-		}
-	}
+int dp(int x){
+	if(x==1) return 1;
+	if(x==2) return 2;
+	
+	if(d[x] != 0) return d[x];
+	
+	return d[x] = (dp(x-1) + dp(x-2)) % 10007;
 }
 
-int main()
-{
+int main(){
 	int n;
-	Score a[10001];
 	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		scanf("%s %d %d %d",a[i].name,&a[i].k,&a[i].y,&a[i].s);
-	}
-	sort(a,a+n,cmp);
-	for(int i = 0;i<n;i++){
-		printf("%s\n",a[i].name);
-	}
+	printf("%d",dp(n));
+	return 0;
 }

@@ -1,19 +1,19 @@
 #include<stdio.h>
-#include<algorithm>
-#include<vector>
-using namespace std;
 
-int main()
-{
+int d[5001] = {0,};
+
+int dp(int x){
+	if(x==1) return 1;
+	if(x==2) return 2;
+	
+	if(d[x] != 0) return d[x];
+	
+	return d[x] = (dp(x-1) + 2 * dp(x-2)) % 10007;
+}
+
+int main(){
 	int n;
-	int k;
-	vector<int> v;
-	scanf("%d %d",&n,&k);
-	for(int i = 0;i<n;i++){
-		int temp;
-		scanf("%d",&temp);
-		v.push_back(temp);
-	}
-	sort(v.begin(),v.end());
-	printf("%d",v[k-1]);
+	scanf("%d",&n);
+	printf("%d",dp(n));
+	return 0;
 }
