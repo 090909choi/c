@@ -1,16 +1,22 @@
 #include<stdio.h>
 
+int d[11];
+
+int dp(int x){
+	if(x==1) return 1;
+	if(x==2) return 2;
+	if(x==3) return 4;
+	if(d[x] != 0) return d[x];
+	return d[x] = dp(x-1) + dp(x-2) + dp(x-3);
+}
+
 int main()
 {
-	if(1)
-	{
-		printf("True\t참\n");
-		printf("응\t맞아\n");
+	int n,t;
+	scanf("%d",&t);
+	for(int i = 0;i<t;i++){
+		scanf("%d",&n);
+		printf("%d",dp(n));
 	}
-	else
-	{
-		printf("False\t거짓\n");
-		printf("아니\t아니야\n");
-	}
-	return 0; 
+	return 0;
 }

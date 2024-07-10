@@ -2,18 +2,17 @@
 
 int main()
 {
-	int a, b;
-	
-	a = 12;
-	b = 56;
-	
-	if(a>b)
-	{
-		printf("%d는 %d보다 크다\n",a,b);
+	int n,a[10001],sum = 0;
+	scanf("%d",&n);
+	for(int i = 0;i<n;i++){
+		scanf("%d",&a[i]);
 	}
-	else
-	{
-		printf("%d는 %d보다 크지 않다\n",a,b);
+	for(int i = 0;i<n;i++){
+		if(a[i] + a[i+1] > a[i+2]){
+			sum += (a[i] + a[i+1]);
+			i+=2;
+		}
 	}
+	printf("%d",sum);
 	return 0;
 }

@@ -1,29 +1,38 @@
-#include<stdio.h> 
-#include<stdlib.h>
-#include<time.h>
+#include<stdio.h>
+
+int d[10001];
 
 int main()
 {
-	srand(time(NULL));
+	int n,a[10001];
+	scanf("%d",&n);
+	for(int i = 0;i<n;i++){
+		scanf("%d",&a[i]);
+	}
+	d[1] = a[1];
+	d[2] = a[1] + a[2];
 	
-	int rnd = rand() % 1024;
-	
-	if(rnd>500)
-	{
-	printf("조건식1 실행\n");
+	for(int i = 3;i<=n;i++){
+		int option1 = d[i-1];
+		int option2 = d[i-2] + a[i];
+		int option3 = d[i-3] + a[i-1] + a[i];
+		if(option1 > option2){
+		if(option1 > option3){
+			d[i] = option1;
+		}
+		else{
+			d[i] = option3;
+		}
+		}
+		else{
+			if(option2 > option3){
+				d[i] = option2;
+			}
+			else{
+				d[i] = option3;
+			}
+		}
 	}
-	else
-	{
-	printf("조건식2 실행\n");
-	}
-	if(rnd>900)
-	{
-	printf("조건식3 실행\n");
-	}
-	else
-	{
-	printf("조건식4 실행\n");
-	}
+	printf("%d",d[n]);
 	return 0;
 }
-
