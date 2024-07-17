@@ -1,18 +1,22 @@
 #include<stdio.h>
-int d[5001] = {0,};
+#include<algorithm>
+using namespace std;
 
-int dp(int x){
-	if(x==1) return 1;
-	if(x==2) return 2;
-	
-	if(d[x] != 0) return d[x];
-	
-	return d[x] = (dp(x-1) + dp(x-2)) % 10007;
-}
+int stair[301];
+int dp[301];
 
 int main(){
 	int n;
 	scanf("%d",&n);
-	printf("%d",dp(n));
-	return 0;
+	for(int i = 1;i<=n;i++){
+		scanf("%d",&stair[i]);
+	}
+	dp[1] = stair[1];
+	dp[2] = stair[1] + stair[2];
+	
+	for(int i = 3;i<=n;i++){
+		dp[i] = max(dp[i-2] + stair[i],dp[i-1] + stair[i] - stair[i-1]);
+		
+	}
+	printf("%d",dp[n]);
 }

@@ -1,32 +1,30 @@
 #include<stdio.h>
-
-int d[1000001];
-
-int main() 
+#include<algorithm>
+using namespace std;
+int stick[2][100];
+int dp[2][100];
+int main()
 {
-	int n;
-	scanf("%d", &n);
-	d[1] = 0;
-	d[2] = 1;
-	d[3] = 1;
-	for(int i = 4; i <= n; i++) 
-	{
-		d[i] = d[i - 1] + 1;
-
-		if (i % 2 == 0){
-			if (d[i] > d[i / 2] + 1){
-				d[i] = d[i / 2] + 1;
-				} 
+	int n,t;
+	scanf("%d",&t);
+	while(t--){
+		scanf("%d",&n);
+		for(int i = 0;i<n;i++){
+			for(int j = 1;j<=n;j++){
+				scanf("%d",&stick[i][j]);
 			}
-
-		if (i % 3 == 0){
-			if (d[i] > d[i / 3] + 1){
-				d[i] = d[i / 3] + 1; 
-			} 
 		}
-	
+		dp[0][0] = 0;
+		dp[1][0] = 0;
+		dp[0][1] = stick[0][1];
+		dp[1][1] = stick[1][1];
+		
+		for(int j = 2;j<=n;j++){
+			dp[0][j] = max(dp[1][j-2],dp[1][j-1])+stick[0][j];
+			dp[1][j] = max(dp[0][j-2],dp[0][j-1])+stick[1][j];
+		}
+		int ans = max(dp[0][n],dp[1][n]);
+		printf("%d\n",ans);
 	}
-
-	printf("%d", d[n]);
 	return 0;
 }
