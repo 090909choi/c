@@ -1,19 +1,22 @@
 #include<stdio.h>
+#include<algorithm>
+using namespace std;
 
-int d[5001] = {0,};
+int a[301];
+int d[301][3];
 
-int dp(int x){
-	if(x==1) return 1;
-	if(x==2) return 2;
-	
-	if(d[x] != 0) return d[x];
-	
-	return d[x] = (dp(x-1) + 2 * dp(x-2)) % 10007;
-}
-
-int main(){
+int main()
+{
 	int n;
 	scanf("%d",&n);
-	printf("%d",dp(n));
+	for(int i = 1;i<=n;i++){
+		scanf("%d",&a[i]);
+	}
+	d[1][1] = a[1];
+	for(int i = 2;i<=n;i++){
+		d[i][2] = d[i-1][1] + a[1];
+		d[i][1] = max(d[i-2][1],d[i-2][2])+a[i];
+	}
+	printf("%d\n",max(d[n][1],d[n][2]));
 	return 0;
 }

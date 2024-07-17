@@ -2,21 +2,35 @@
 #include<algorithm>
 using namespace std;
 
-int stair[301];
-int dp[301];
+int dp[10001];
 
-int main(){
+int main()
+{
 	int n;
 	scanf("%d",&n);
-	for(int i = 1;i<=n;i++){
-		scanf("%d",&stair[i]);
-	}
-	dp[1] = stair[1];
-	dp[2] = stair[1] + stair[2];
-	
-	for(int i = 3;i<=n;i++){
-		dp[i] = max(dp[i-2] + stair[i],dp[i-1] + stair[i] - stair[i-1]);
-		
-	}
-	printf("%d",dp[n]);
+	for(int i = 2;i<=n;i++){
+		dp[i] = dp[i-1] + 1;
+		if (i % 3 == 0)
+		{
+			if(dp[i]> dp[i/3]+1){
+				dp[i] = dp[i/3]+1;
+			}
+			else
+			{
+				dp[i] = dp[i];
+			}
+		}
+        if (i % 2 == 0)
+        {
+            if(dp[i]> dp[i/2]+1){
+				dp[i] = dp[i/2]+1;
+			}
+			else
+			{
+				dp[i] = dp[i];
+			}
+		}
+    }
+    printf("%d", dp[n]);
+	return 0;
 }
