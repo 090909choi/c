@@ -1,30 +1,26 @@
 #include<stdio.h>
-#include<algorithm>
-using namespace std;
 
-int stick[2][100];
-int dp[2][100]
+int is_prime[101];
 
 int main(){
-	int t,n;
-	scanf("%d",&t);
-	while(t--){
-		scanf("%d",&n);
-		for(int i = 0;i<n;i++){
-			for(int j = 1;j<=n;j++){
-				scanf("%d",&stick[i][j]);
+	int n;
+	scanf("%d",&n);
+	for(int i = 0;i<=100;i++){
+		is_prime[i] = 1; 
+	}
+	is_prime[0] = 0; 
+	is_prime[1] = 0;
+	
+	for(int i = 2;i<=n;i++){
+		if(is_prime[i]){
+			for(int j = i*i;j<=n;j+=1){
+				is_prime[j] = 0;
 			}
 		}
-		dp[0][0] = 0;
-		dp[1][0] = 0;
-		dp[0][1] = stick[0][1];
-		dp[1][1] = stick[1][1];
-
-		for(int j = 2;j<=n;j++){
-			dp[0][j] = max(dp[1][j-2],dp[1][j-1])+stick[0][j];
-			dp[1][j] = max(dp[0][j-2],dp[0][j-1])+stick[1][j];
+	} 
+	for(int i = 2;i<=n;i++){
+		if(is_prime[i]){
+			printf("%d",i);
 		}
-		int ans = max(dp[0][n],dp[1][n]);
-		printf("%d\n",ans);
 	}
 }

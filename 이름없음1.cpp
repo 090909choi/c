@@ -1,23 +1,18 @@
 #include<stdio.h>
-#include<algorithm>
-using namespace std;
 
-int stair[301];
-int dp[301];
+int gcd(int a,int b){
+	if(b == 0){
+		return a;
+	}
+	else{
+		return gcd(b,a%b);
+	}
+}
 
-int main()
-{
-	int n;
-	scanf("%d",&n);
-	for(int i = 1;i<=n;i++){
-		scanf("%d",&stair[i]);
-	}
-	dp[1] = stair[1];
-	dp[2] = stair[1] + stair[2];
-	
-	for(int i = 3;i<=n;i++){
-		dp[i] =  max(dp[1] + stair[i],dp[2] + stair[i] - stair[2]);
-	}
-	printf("%d",&dp[n]);
+
+int main(){
+	int a,b;
+	scanf("%d %d",&a,&b);
+	printf("%d\n%d",gcd(a,b),a*b/gcd(a,b));
 	return 0;
 }

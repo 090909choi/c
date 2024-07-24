@@ -1,36 +1,29 @@
 #include<stdio.h>
-#include<algorithm>
-using namespace std;
-
-int dp[10001];
-
-int main()
-{
-	int n;
-	scanf("%d",&n);
-	for(int i = 2;i<=n;i++){
-		dp[i] = dp[i-1] + 1;
-		if (i % 3 == 0)
-		{
-			if(dp[i]> dp[i/3]+1){
-				dp[i] = dp[i/3]+1;
-			}
-			else
-			{
-				dp[i] = dp[i];
+const int max = 1000000;
+int prime[max];
+int pn;
+bool check[max+1];
+int main(){
+	for(int i = 2;i<=max;i++){
+		if(check[i] == false){
+			prime[pn++] = i;
+			for(int j = i*i;j<=max;j += i){
+				check[j] = true;
 			}
 		}
-        if (i % 2 == 0)
-        {
-            if(dp[i]> dp[i/2]+1){
-				dp[i] = dp[i/2]+1;
-			}
-			else
-			{
-				dp[i] = dp[i];
+	}
+	while(true){
+		int n;
+		scanf("%d",&n);
+		if(n == 0){
+			break;
+		}
+		for(int i = 1;i<pn;i++){
+			if(check[n - prime[i]] == false){
+				printf("%d = %d + %d \n",n,prime[i],n - prime[i]);
+				break;
 			}
 		}
-    }
-    printf("%d", dp[n]);
+	}
 	return 0;
 }
