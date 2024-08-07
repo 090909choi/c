@@ -1,18 +1,20 @@
 #include<stdio.h>
 
-int main()
-{
-	int n,a[10001],sum = 0;
-	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		scanf("%d",&a[i]);
+int main(){
+	int w,h,p,q,t;
+	scanf("%d %d",&w,&h);
+	scanf("%d %d",&p,&q);
+	scanf("%d",&t);
+	
+	int final_x = (p+t)%(w*2);
+	int final_y = (q+t)%(h*2);
+	
+	if(final_x > w){
+		final_x = 2*w - final_x;
 	}
-	for(int i = 0;i<n;i++){
-		if(a[i] + a[i+1] > a[i+2]){
-			sum += (a[i] + a[i+1]);
-			i+=2;
-		}
+	if(final_y > y){
+		final_y = h * 2 - final_y;
 	}
-	printf("%d",sum);
-	return 0;
+	
+	printf("%d %d",&final_x,&final_y);
 }

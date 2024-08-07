@@ -1,28 +1,15 @@
 #include<stdio.h>
 
-int main()
-{ 
-	int num;
-	
-	printf("10000 미만 정수 입력 : ");
-	scanf("%d",&num);
-	
-	if(num<10)
-	{
-		printf("한 자리 수\n");
+int main(){
+	int t,q,d,n,p,c;
+	scanf("%d",&t);
+	for(int i = 0;i<t;i++){
+		scanf("%d",&c);
+		q = c/25;
+		d = c%25/10;
+		n = c%25%10/5;
+		p = c%25%10%5/1;
+		printf("%d %d %d %d\n",q,d,n,p);
 	}
-	else if(num<100)
-	{
-		printf("두 자리 수\n");
-	}
-	else if(num<1000)
-	{
-		printf("세 자리 수\n");
-	}
-	else if(num<10000)
-	{
-		printf("네 자리 수\n");
-	}
-	return 0; 
-	
+	return 0;
 }
