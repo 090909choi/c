@@ -1,29 +1,25 @@
 #include<stdio.h>
-const int max = 1000000;
-int prime[max];
-int pn;
-bool check[max+1];
+
 int main(){
-	for(int i = 2;i<=max;i++){
-		if(check[i] == false){
-			prime[pn++] = i;
-			for(int j = i*i;j<=max;j += i){
-				check[j] = true;
-			}
-		}
-	}
-	while(true){
-		int n;
+	int n,c,a,al = 0,q[1000],count = 0;
+	float p;
+	scanf("%d",&c);
+	for(int i = 0;i<c;i++){
 		scanf("%d",&n);
-		if(n == 0){
-			break;
+		for(int j = 0;j<n;j++){
+			scanf("%d",&a);
+			al += a;
+			q[j] = a;
 		}
-		for(int i = 1;i<pn;i++){
-			if(check[n - prime[i]] == false){
-				printf("%d = %d + %d \n",n,prime[i],n - prime[i]);
-				break;
+		p = (double)al/n;
+		for(int x = 0;x<n;x++){
+			if(p<q[x]){
+				count++;
 			}
 		}
+		printf("%.3f%%\n",(double)(count*100)/n);
+		count = 0;
+		al = 0;
 	}
 	return 0;
 }

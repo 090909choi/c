@@ -1,22 +1,22 @@
 #include<stdio.h>
-#include<algorithm>
-using namespace std;
 
-int a[301];
-int d[301][3];
+int first[1000000];
+int second[1000000];
 
-int main()
-{
+int main(){
 	int n;
 	scanf("%d",&n);
-	for(int i = 1;i<=n;i++){
-		scanf("%d",&a[i]);
+	for(int i = 0;i<n;i++){
+		scanf("%d",&first[i]);
 	}
-	d[1][1] = a[1];
-	for(int i = 2;i<=n;i++){
-		d[i][2] = d[i-1][1] + a[1];
-		d[i][1] = max(d[i-2][1],d[i-2][2])+a[i];
+	int ans = n;
+	
+	for(int i = 0;i<n;i++){
+		second[first[i]] = second[first[i] - 1]+1;
+		if(ans>n-second[first[i]]){
+			ans = n-second[first[i]];
+		}
 	}
-	printf("%d\n",max(d[n][1],d[n][2]));
+	printf("%d",ans);
 	return 0;
 }
