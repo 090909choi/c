@@ -1,23 +1,30 @@
-#include<stdio.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
-int gcd(int x,int y){
-	if(y==0){
-		return x;
-	}
-	else{
-		return gcd(y,x%y);
-	}
-}
+int main()
+{
+	int cnt = 1;
+	char num[10] = { '0','1','2','3','4','5','6','7','8','9' };
+	int count[10] = { 0 };
+	string s;
+	cin >> s;
 
-int main(){
-	int a,b;
-	int n;
-	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		scanf("%d %d",&a,&b);
-		int g = gcd(a,b);
-		printf("%d",a*b/g);
-	}
+	for (int i = 0; i < s.size(); i++)
+		for (int j = 0; j < 10; j++)
+			if (s[i] == num[j])
+				count[j]++;
+
+	int sum = count[6] + count[9];
+	count[6] = sum / 2;
+	count[9] = sum - count[6];
+
+	int max = count[0];
+
+	for (int i = 0; i < 10; i++)
+		if (max < count[i])
+			max = count[i];
+
+	cout << max;
 	return 0;
 }
