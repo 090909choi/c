@@ -1,30 +1,24 @@
-#include<iostream>
-#include<string>
-using namespace std;
+#include<stdio.h>
 
 int main()
 {
-	int cnt = 1;
-	char num[10] = { '0','1','2','3','4','5','6','7','8','9' };
-	int count[10] = { 0 };
-	string s;
-	cin >> s;
-
-	for (int i = 0; i < s.size(); i++)
-		for (int j = 0; j < 10; j++)
-			if (s[i] == num[j])
-				count[j]++;
-
-	int sum = count[6] + count[9];
-	count[6] = sum / 2;
-	count[9] = sum - count[6];
-
-	int max = count[0];
-
-	for (int i = 0; i < 10; i++)
-		if (max < count[i])
-			max = count[i];
-
-	cout << max;
+	int n,m,max = 0,x,y;
+	int cave[101][101] = {0,};
+	scanf("%d %d",&n,&m);
+	for(int i = 1;i<=m;i++){
+		for(int j = 1;j<=n;j++){
+			scanf("%d",&cave[i][j]);
+		}
+	}
+	for(int i = 1;i<=m;i++){
+		for(int j = 1;j<=n;j++){
+			if(max<cave[i][j]+cave[i+1][j]+cave[i][j+1]+cave[i-1][j]+cave[i][j-1]){
+				max = cave[i][j]+cave[i+1][j]+cave[i][j+1]+cave[i-1][j]+cave[i][j-1];
+				x = j;
+				y = i;
+			}
+		}
+	}
+	printf("ÁÂÇ¥:(%d,%d) ¾ç:%d",x,y,max);
 	return 0;
 }

@@ -1,22 +1,23 @@
 #include<stdio.h>
 
-int first[1000000];
-int second[1000000];
-
 int main(){
-	int n;
+	int n,a,b,count = 0;
+	int p[101][101] = {0,};
 	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		scanf("%d",&first[i]);
-	}
-	int ans = n;
-	
-	for(int i = 0;i<n;i++){
-		second[first[i]] = second[first[i] - 1]+1;
-		if(ans>n-second[first[i]]){
-			ans = n-second[first[i]];
+	for(int i = 1;i<=n;i++){
+		scanf("%d %d",&a,&b);
+		for(int j = 0;j<10;j++){
+			for(int v = 0;v<10;v++){
+				p[a+j][b+v] = 1;
+			}
 		}
 	}
-	printf("%d",ans);
-	return 0;
+	for(int i = 1;i<=100;i++){
+		for(int j = 1;j<=100;j++){
+				if(p[a][b] == 1){
+					count++;
+				}
+		}
+	}
+	printf("%d",count);
 }

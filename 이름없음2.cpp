@@ -1,47 +1,26 @@
 #include<stdio.h>
 
-int a[10000][10000];
-int b[10000][10000];
+int ar[1001];
+int dp[1001];
 
-int main()
-{
+int main(){
 	int n;
 	scanf("%d",&n);
 	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			scanf("%d",&a[i][j]);
-		}
+		scanf("%d",&ar[i]);
+		dp[i] = 1;
 	}
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			if(a[i][j] == '.'){
-				b[i][j] = 0;
-			}
-			else
-			{
-				b[i][j] = '*';
+	int max = 1;
+	
+	for(int i = 1;i<n;i++){
+		for(int j = 0;j<i;j++){
+			if(ar[i]>ar[j] && dp[i] < dp[j]+1){
+				dp[i] = dp[i] + 1;
 			}
 		}
-	}
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			if(a[i][j] != '.'){
-				b[i-1][j+1]+=a[i][j];
-				b[i-1][j]+=a[i][j];
-				b[i-1][j-1]+=a[i][j];
-				b[i][j+1]+=a[i][j];
-				b[i][j-1]+=a[i][j];
-				b[i+1][j+1]+=a[i][j];
-				b[i+1][j]+=a[i][j];
-				b[i+1][j-1]+=a[i][j];
-			}
+		if(max<dp[i]){
+		max = dp[i];
 		}
 	}
-	for(int i = 0;i<n;i++){
-		for(int j = 0;j<n;j++){
-			printf("%d",b[i][j]);
-		}
-		printf("\n");
-	}
-	return 0;
+	printf("%d",max);
 }

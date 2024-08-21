@@ -1,25 +1,26 @@
 #include<stdio.h>
 
+int ar[1001];
+int dp[1001];
+
 int main(){
-	int n,c,a,al = 0,q[1000],count = 0;
-	float p;
-	scanf("%d",&c);
-	for(int i = 0;i<c;i++){
-		scanf("%d",&n);
-		for(int j = 0;j<n;j++){
-			scanf("%d",&a);
-			al += a;
-			q[j] = a;
-		}
-		p = (double)al/n;
-		for(int x = 0;x<n;x++){
-			if(p<q[x]){
-				count++;
+	int n;
+	scanf("%d",&n);
+	for(int i = 0;i<n;i++){
+		scanf("%d",&ar[i]);
+		dp[i] = ar[i];
+	}
+	int max = ar[0];
+	
+	for(int i = 1;i<n;i++){
+		for(int j = 0;j<i;j++){
+			if(ar[i]>ar[j] && dp[i] < dp[j]+ar[i]){
+				dp[i] = dp[j] + ar[i];
 			}
 		}
-		printf("%.3f%%\n",(double)(count*100)/n);
-		count = 0;
-		al = 0;
+		if(max<dp[i]){
+		max = dp[i];
+		}
 	}
-	return 0;
+	printf("%d",max);
 }
