@@ -1,26 +1,14 @@
 #include<stdio.h>
+#include<string.h> 
 
-int ar[1001];
-int dp[1001];
-
-int main(){
+int main()
+{
+	char a[1000];
+	char b[1000];
 	int n;
-	scanf("%d",&n);
-	for(int i = 0;i<n;i++){
-		scanf("%d",&ar[i]);
-		dp[i] = 1;
-	}
-	int max = 1;
-	
-	for(int i = 1;i<n;i++){
-		for(int j = 0;j<i;j++){
-			if(ar[i]>ar[j] && dp[i] < dp[j]+1){
-				dp[i] = dp[i] + 1;
-			}
-		}
-		if(max<dp[i]){
-		max = dp[i];
-		}
-	}
-	printf("%d",max);
+	scanf("%s",a);
+	scanf("%s",b);
+	n = strcmp(a,b);
+	printf("%d",n);
+	return 0;
 }
